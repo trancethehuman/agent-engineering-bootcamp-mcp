@@ -1,84 +1,51 @@
 #!/usr/bin/env node
 
-import { Buffer } from "buffer";
+// Configuration for hosted server
+const hostedConfig = {
+  url: "https://agent-engineering-bootcamp-mcp.vercel.app/sse",
+};
 
-const args = process.argv.slice(2);
+// Configuration for local development
+const localConfig = {
+  command: "node",
+  args: [
+    "node_modules/@modelcontextprotocol/server-stdio/dist/index.js",
+    "./build/index.js",
+  ],
+  env: {},
+};
 
-if (args.length === 0 || args.includes("--help")) {
-  console.log(`
-Usage: node generate-cursor-deeplink.mjs [type] [server-url]
-
-Types:
-  local               - Generate deeplink for local development
-  hosted <url>        - Generate deeplink for hosted server
-
-Examples:
-  node generate-cursor-deeplink.mjs local
-  node generate-cursor-deeplink.mjs hosted https://your-mcp-server.vercel.app
-
-Output:
-  - Markdown button code (for README)
-  - Direct link URL
-  `);
-  process.exit(0);
+// Generate URLs for both configurations
+function generateDeepLink(config, serverName = "agent-bootcamp") {
+  const configStr = JSON.stringify({ [serverName]: config });
+  const encodedConfig = encodeURIComponent(configStr);
+  return `https://cursor.com/install-mcp?config=${encodedConfig}`;
 }
 
-const type = args[0];
+console.log("=== Cursor MCP Installation Links ===\n");
 
-if (type === "local") {
-  const config = {
-    command: "node",
-    args: [
-      process.cwd() + "/scripts/test-streamable-http-client.mjs",
-      "http://localhost:3000",
-    ],
-  };
+console.log("For HOSTED server (recommended):");
+console.log(generateDeepLink(hostedConfig));
+console.log("\n");
 
-  const encoded = Buffer.from(JSON.stringify(config)).toString("base64");
-  const urlEncoded = encodeURIComponent(encoded);
+console.log("For LOCAL development:");
+console.log(generateDeepLink(localConfig));
+console.log("\n");
 
-  console.log("\nLocal Development Cursor Deeplink:");
-  console.log("\nMarkdown button:");
-  console.log(
-    `[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp-local&config=${urlEncoded})`
-  );
-  console.log("\nDirect URL:");
-  console.log(
-    `https://cursor.com/install-mcp?name=agent-bootcamp-local&config=${urlEncoded}`
-  );
-} else if (type === "hosted" && args[1]) {
-  const serverUrl = args[1];
+console.log("=== How to use ===");
+console.log("1. Copy the appropriate link above");
+console.log("2. Open it in your browser");
+console.log("3. Cursor will prompt to add the MCP server");
+console.log("4. Restart Cursor after installation");
+console.log("\n");
 
-  // For hosted servers, we need to use npx with a generic MCP HTTP client
-  // This assumes you'll publish a package or use a generic MCP client
-  const config = {
-    command: "npx",
-    args: ["-y", "@modelcontextprotocol/server-everything", serverUrl + "/mcp"],
-  };
-
-  const encoded = Buffer.from(JSON.stringify(config)).toString("base64");
-  const urlEncoded = encodeURIComponent(encoded);
-
-  console.log("\nHosted Server Cursor Deeplink:");
-  console.log("\nMarkdown button:");
-  console.log(
-    `[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=${urlEncoded})`
-  );
-  console.log("\nDirect URL:");
-  console.log(
-    `https://cursor.com/install-mcp?name=agent-bootcamp&config=${urlEncoded}`
-  );
-
-  console.log(
-    "\n\nTo update README.md, replace HOSTED_SERVER_CONFIG_PLACEHOLDER with:"
-  );
-  console.log(urlEncoded);
-
-  console.log(
-    "\n\nNote: This assumes the server endpoint is at " + serverUrl + "/mcp"
-  );
-  console.log("Adjust the path if your MCP endpoint is different.");
-} else {
-  console.error("Invalid arguments. Run with --help for usage information.");
-  process.exit(1);
-}
+console.log("=== Manual Configuration ===");
+console.log("If the deeplink doesn't work, add this to ~/.cursor/mcp.json:");
+console.log("\nFor hosted server:");
+console.log(
+  JSON.stringify({ mcpServers: { "agent-bootcamp": hostedConfig } }, null, 2)
+);
+console.log("\nFor local development:");
+console.log(
+  JSON.stringify({ mcpServers: { "agent-bootcamp": localConfig } }, null, 2)
+);

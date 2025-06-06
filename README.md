@@ -328,3 +328,93 @@ This Agent Engineering Bootcamp MCP server includes:
 - Make sure you have [Fluid compute](https://vercel.com/docs/functions/fluid-compute) enabled for efficient execution
 - After enabling Fluid compute, open `app/[transport]/route.ts` and adjust `maxDuration` to 800 if you using a Vercel Pro or Enterprise account
 - [Deploy the Next.js MCP template](https://vercel.com/templates/next.js/model-context-protocol-mcp-with-next-js)
+
+## 📱 Integration with AI Tools
+
+### Claude Desktop
+
+Add to your Claude Desktop configuration file:
+
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything",
+        "https://agent-engineering-bootcamp-mcp.vercel.app/mcp"
+      ]
+    }
+  }
+}
+```
+
+### Cursor
+
+For Cursor 0.48.0 or later, use direct SSE connection:
+
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "url": "https://agent-engineering-bootcamp-mcp.vercel.app/sse"
+    }
+  }
+}
+```
+
+For older versions, use the proxy approach:
+
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything",
+        "https://agent-engineering-bootcamp-mcp.vercel.app/mcp"
+      ]
+    }
+  }
+}
+```
+
+### Available Tools
+
+The server exposes the following tools:
+
+- `echo` - Echo a message for testing purposes
+- `get-agent-bootcamp-setup` - Get step-by-step setup instructions for the Agent Engineering Bootcamp
+
+## 🧪 Testing
+
+### Testing Tool Discovery
+
+To verify that tools are being exposed correctly:
+
+```bash
+# Test HTTP endpoint with tool listing
+node scripts/test-http-tools.mjs
+
+# Test with a custom server URL
+node scripts/test-http-tools.mjs https://your-server-url.vercel.app
+```
+
+## 🔧 Troubleshooting
+
+### Cursor Not Detecting Tools
+
+If Cursor isn't detecting your MCP server tools:
+
+1. **Check Cursor Version**: Ensure you have Cursor 0.48.0 or later for direct SSE support
+2. **Use Direct SSE**: Update your configuration to use `"url": "https://your-server/sse"` instead of the command approach
+3. **Restart Cursor**: After updating the configuration, fully restart Cursor
+4. **Check Server Logs**: View your Vercel function logs to ensure the server is receiving requests
+5. **Test Manually**: Use the test scripts to verify the server is working:
+   ```bash
+   node scripts/test-http-tools.mjs
+   ```
+
+### Redis Connection Issues

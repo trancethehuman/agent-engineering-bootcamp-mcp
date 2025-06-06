@@ -144,14 +144,15 @@ export default function HomePage() {
 
           <div className="buttons">
             <a
-              href="https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZXZlcnl0aGluZyIsImh0dHBzOi8vYWdlbnQtZW5naW5lZXJpbmctYm9vdGNhbXAtbWNwLnZlcmNlbC5hcHAvbWNwIl19"
-              className="cursor-btn"
+              href="https://cursor.com/install-mcp?config=%7B%22agent-bootcamp%22%3A%7B%22url%22%3A%22https%3A%2F%2Fagent-engineering-bootcamp-mcp.vercel.app%2Fsse%22%7D%7D"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <img
-                src="https://cursor.com/deeplink/mcp-install-dark.svg"
-                alt="Add agent-bootcamp MCP server to Cursor"
-                height="32"
+                src="https://raw.githubusercontent.com/modelcontextprotocol/servers/main/images/cursor-logo.png"
+                alt="Cursor"
+                className="w-5 h-5 mr-2"
               />
+              Add to Cursor
             </a>
 
             <a

@@ -6,6 +6,7 @@ import { getRedisUrl, isRedisAvailable } from "../../lib/redis";
 
 const handler = createMcpHandler(
   async (server) => {
+    // Echo tool for testing
     // @ts-ignore
     server.tool(
       "echo",
@@ -18,6 +19,7 @@ const handler = createMcpHandler(
       })
     );
 
+    // Agent bootcamp setup tool
     // @ts-ignore
     server.tool(
       "get-agent-bootcamp-setup",
@@ -66,20 +68,9 @@ ${customizedContent}
       }
     );
   },
+  {},
   {
-    capabilities: {
-      tools: {
-        echo: {
-          description: "Echo a message for testing purposes",
-        },
-        "get-agent-bootcamp-setup": {
-          description:
-            "Get step-by-step setup instructions for setting up a new code project in order to begin the Agent Engineering Bootcamp",
-        },
-      },
-    },
-  },
-  {
+    // Handler options
     basePath: "",
     verboseLogs: true,
     maxDuration: 60,
