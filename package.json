@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "setup": "./scripts/setup.sh",
+    "test:sse": "node scripts/test-client.mjs http://localhost:3000",
+    "test:http": "node scripts/test-streamable-http-client.mjs http://localhost:3000"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
     "@vercel/mcp-adapter": "0.8.2",
     "next": "15.2.4",
     "react": "^19.1.0",
