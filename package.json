@@ -9,7 +9,8 @@
     "setup": "./scripts/setup.sh",
     "test:sse": "node scripts/test-client.mjs http://localhost:3000",
     "test:http": "node scripts/test-streamable-http-client.mjs http://localhost:3000",
-    "test:prompts": "node scripts/test-prompts.mjs http://localhost:3000"
+    "test:prompts": "node scripts/test-prompts.mjs http://localhost:3000",
+    "generate:cursor-link": "node scripts/generate-cursor-deeplink.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

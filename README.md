@@ -4,7 +4,7 @@
 
 Get instant access to the Agent Engineering Bootcamp intelligent onboarding in Cursor:
 
-[![Add Agent Bootcamp MCP to Cursor](https://cursor.directory/add.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=agent-bootcamp&config=HOSTED_SERVER_CONFIG_PLACEHOLDER)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=HOSTED_SERVER_CONFIG_PLACEHOLDER)
 
 _The hosted server provides the same agent bootcamp prompts without requiring local setup._
 
@@ -25,15 +25,13 @@ If you want to clone this repository and develop/test the MCP server locally:
 2. **Generate your local Cursor deeplink:**
 
    ```sh
-   node -e "
-   const config = {
-     command: 'node',
-     args: [process.cwd() + '/scripts/test-streamable-http-client.mjs', 'http://localhost:3000']
-   };
-   const encoded = Buffer.from(JSON.stringify(config)).toString('base64');
-   console.log('Your local Cursor deeplink:');
-   console.log(\`cursor://anysphere.cursor-deeplink/mcp/install?name=agent-bootcamp-local&config=\${encoded}\`);
-   "
+   pnpm generate:cursor-link local
+   ```
+
+   Or generate a link for a hosted server:
+
+   ```sh
+   pnpm generate:cursor-link hosted https://your-server-url.vercel.app
    ```
 
 3. **Or manually add to Cursor configuration:**
