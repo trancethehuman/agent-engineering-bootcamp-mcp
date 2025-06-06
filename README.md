@@ -122,13 +122,13 @@ docker rm redis-mcp
 
 ## Usage
 
-This sample app uses the [Vercel MCP Adapter](https://www.npmjs.com/package/@vercel/mcp-adapter) that allows you to drop in an MCP server on a group of routes in any Next.js project.
+This Agent Engineering Bootcamp MCP server uses the [Vercel MCP Adapter](https://www.npmjs.com/package/@vercel/mcp-adapter) to provide setup guidance and tools for students learning agent development.
 
 Update `app/[transport]/route.ts` with your tools, prompts, and resources following the [MCP TypeScript SDK documentation](https://github.com/modelcontextprotocol/typescript-sdk/tree/main?tab=readme-ov-file#server).
 
 ## Features
 
-This example includes:
+This Agent Engineering Bootcamp MCP server includes:
 
 ### 🔧 Tools
 

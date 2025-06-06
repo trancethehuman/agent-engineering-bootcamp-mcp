@@ -8,7 +8,7 @@ async function main() {
 
   const client = new Client(
     {
-      name: "prompts-test-client",
+      name: "agent-bootcamp-test-client",
       version: "1.0.0",
     },
     {
