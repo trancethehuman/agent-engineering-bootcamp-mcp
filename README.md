@@ -6,6 +6,25 @@
 
 A Model Context Protocol server providing setup guidance for students learning agent development. This project serves both as an educational resource and a template for building your own MCP servers with Next.js.
 
+## 🎯 What is this?
+
+This MCP server helps students get started with the **Agent Engineering Bootcamp** by providing:
+
+- **Step-by-step setup instructions** for both Python and TypeScript development paths
+- **Interactive guidance** directly in your IDE through MCP tools
+- **Template code** for building your own MCP servers with Next.js
+
+**Perfect for**: Students beginning their agent development journey who need structured guidance and a working MCP server example.
+
+## 📋 Table of Contents
+
+- [🚀 Quick Start](#-quick-start) - One-click installation
+- [🛠️ For Developers](#️-for-developers-local-development-setup) - Local development setup
+- [⚙️ Setup](#setup) - Manual configuration
+- [🧪 Testing](#-testing) - Tool discovery and testing
+- [📱 Integration](#-integration-with-ai-tools) - Claude Desktop & Cursor
+- [🔧 Troubleshooting](#-troubleshooting) - Common issues and solutions
+
 ## 🚀 Quick Start
 
 Get instant access to the Agent Engineering Bootcamp intelligent onboarding:
@@ -16,7 +35,7 @@ Get instant access to the Agent Engineering Bootcamp intelligent onboarding:
 
 _Click the button above to automatically add this MCP server to Cursor._
 
-## For Developers: Local Development Setup
+## 🛠️ For Developers: Local Development Setup
 
 If you want to clone this repository and develop/test the MCP server locally:
 
@@ -33,13 +52,7 @@ If you want to clone this repository and develop/test the MCP server locally:
 2. **Generate your local Cursor deeplink:**
 
    ```sh
-   pnpm generate:cursor-link local
-   ```
-
-   Or generate a link for a hosted server:
-
-   ```sh
-   pnpm generate:cursor-link hosted https://your-server-url.vercel.app
+   pnpm generate:cursor-link
    ```
 
 3. **Or manually add to Cursor configuration:**
@@ -59,7 +72,7 @@ If you want to clone this repository and develop/test the MCP server locally:
 
 Replace `/ABSOLUTE/PATH/TO/YOUR/PROJECT` with your actual project path.
 
-## Setup
+## ⚙️ Setup
 
 ### Quick Setup (Recommended)
 
