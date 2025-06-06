@@ -154,9 +154,7 @@ Once configured, you should see a tools icon (🔨) in Claude Desktop. You can n
 
 ## Add to Cursor
 
-[![Add to Cursor](https://cursor.directory/add.svg)](cursor://clone?url=https://github.com/[YOUR-USERNAME]/agent-engineering-bootcamp-mcp)
-
-_Replace `[YOUR-USERNAME]` with your actual GitHub username when you publish this repository._
+[![Add to Cursor](https://cursor.directory/add.svg)](cursor://clone?url=https://github.com/trancethehuman/agent-engineering-bootcamp-mcp)
 
 ## Development Workflow
 
