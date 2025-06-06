@@ -1,5 +1,58 @@
 # Agent Engineering Bootcamp MCP
 
+## Add to Cursor
+
+Get instant access to the Agent Engineering Bootcamp intelligent onboarding in Cursor:
+
+[![Add Agent Bootcamp MCP to Cursor](https://cursor.directory/add.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=agent-bootcamp&config=HOSTED_SERVER_CONFIG_PLACEHOLDER)
+
+_The hosted server provides the same agent bootcamp prompts without requiring local setup._
+
+## For Developers: Local Development Setup
+
+If you want to clone this repository and develop/test the MCP server locally:
+
+### Setting Up Local MCP Server
+
+1. **Clone and setup:**
+
+   ```sh
+   git clone https://github.com/trancethehuman/agent-engineering-bootcamp-mcp.git
+   cd agent-engineering-bootcamp-mcp
+   pnpm run setup
+   ```
+
+2. **Generate your local Cursor deeplink:**
+
+   ```sh
+   node -e "
+   const config = {
+     command: 'node',
+     args: [process.cwd() + '/scripts/test-streamable-http-client.mjs', 'http://localhost:3000']
+   };
+   const encoded = Buffer.from(JSON.stringify(config)).toString('base64');
+   console.log('Your local Cursor deeplink:');
+   console.log(\`cursor://anysphere.cursor-deeplink/mcp/install?name=agent-bootcamp-local&config=\${encoded}\`);
+   "
+   ```
+
+3. **Or manually add to Cursor configuration:**
+   ```json
+   {
+     "mcpServers": {
+       "agent-bootcamp-local": {
+         "command": "node",
+         "args": [
+           "/ABSOLUTE/PATH/TO/YOUR/PROJECT/scripts/test-streamable-http-client.mjs",
+           "http://localhost:3000"
+         ]
+       }
+     }
+   }
+   ```
+
+Replace `/ABSOLUTE/PATH/TO/YOUR/PROJECT` with your actual project path.
+
 ## Setup
 
 ### Quick Setup (Recommended)
@@ -151,10 +204,6 @@ Once configured, you should see a tools icon (🔨) in Claude Desktop. You can n
 - Verify the server is accessible at `http://localhost:3000/mcp`
 - Check the Claude logs for specific error messages
 - Try running `pnpm test:http` to verify the server is working
-
-## Add to Cursor
-
-[![Add to Cursor](https://cursor.directory/add.svg)](cursor://clone?url=https://github.com/trancethehuman/agent-engineering-bootcamp-mcp)
 
 ## Development Workflow
 
