@@ -2,13 +2,46 @@
 
 echo "🚀 Setting up MCP Next.js development environment..."
 
+# Check for Upstash Redis configuration
+if [ -f .env.local ] && grep -q "UPSTASH_REDIS_REST_URL" .env.local && grep -q "UPSTASH_REDIS_REST_TOKEN" .env.local; then
+    echo "✅ Upstash Redis already configured!"
+    echo "   Using cloud Redis database for SSE transport"
+    echo ""
+    echo "🚀 Starting development server..."
+    pnpm dev
+    exit 0
+fi
+
+echo "📋 Redis Setup Options:"
+echo "   1. Upstash KV (Cloud Redis) - Recommended for production"
+echo "   2. Local Docker Redis - Good for development"
+echo ""
+
+# Check if .env.development.local exists (from vercel env pull)
+if [ -f .env.development.local ]; then
+    echo "🌐 Found .env.development.local from Vercel"
+    echo "   This likely contains Upstash Redis configuration"
+    echo "   Copying to .env.local for local development..."
+    cp .env.development.local .env.local
+    echo "✅ Environment variables copied"
+    echo ""
+    echo "🚀 Starting development server..."
+    pnpm dev
+    exit 0
+fi
+
+echo "🐳 Setting up local Redis with Docker..."
+
 if ! command -v docker &> /dev/null; then
     echo "❌ Docker is not installed. Please install Docker first:"
     echo "   Visit: https://docs.docker.com/get-docker/"
+    echo ""
+    echo "💡 Alternative: Set up Upstash Redis instead:"
+    echo "   1. Run: vercel link (if not already linked)"
+    echo "   2. Run: vercel env pull .env.development.local"
+    echo "   3. Run this script again"
     exit 1
 fi
-
-echo "🐳 Starting Redis container..."
 
 if ! docker info &> /dev/null; then
     echo "❌ Docker daemon is not running. Please start Docker first."
@@ -58,12 +91,18 @@ if [ "$ENV_CREATED" = true ]; then
 fi
 
 echo ""
-echo "🎉 Setup complete! You can now:"
+echo "🎉 Local Redis setup complete! You can now:"
 echo "   • Test SSE client: 'pnpm test:sse'"
 echo "   • Test HTTP client: 'pnpm test:http'"
 echo ""
-echo "🛑 To stop Redis later: 'docker stop redis-mcp'"
-echo "🗑️  To remove Redis container: 'docker rm redis-mcp'"
+echo "🐳 Redis Management:"
+echo "   • Stop Redis: 'docker stop redis-mcp'"
+echo "   • Remove Redis: 'docker rm redis-mcp'"
+echo ""
+echo "☁️  To switch to Upstash Redis later:"
+echo "   1. Run: vercel link"
+echo "   2. Run: vercel env pull .env.development.local"
+echo "   3. Restart the development server"
 echo ""
 echo "🚀 Starting development server..."
 pnpm dev 

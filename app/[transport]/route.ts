@@ -2,6 +2,7 @@ import { createMcpHandler } from "@vercel/mcp-adapter";
 import { z } from "zod";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { getRedisUrl, isRedisAvailable } from "../../lib/redis";
 
 const handler = createMcpHandler(
   async (server) => {
@@ -83,7 +84,7 @@ const handler = createMcpHandler(
     basePath: "",
     verboseLogs: true,
     maxDuration: 60,
-    ...(process.env.REDIS_URL && { redisUrl: process.env.REDIS_URL }),
+    ...(isRedisAvailable() && { redisUrl: getRedisUrl() }),
   }
 );
 

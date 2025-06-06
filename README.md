@@ -4,7 +4,7 @@
 
 Get instant access to the Agent Engineering Bootcamp intelligent onboarding in Cursor:
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=HOSTED_SERVER_CONFIG_PLACEHOLDER)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZXZlcnl0aGluZyIsImh0dHBzOi8vYWdlbnQtZW5naW5lZXJpbmctYm9vdGNhbXAtbWNwLnZlcmNlbC5hcHAvbWNwIl19)
 
 _The hosted server provides the same agent bootcamp prompts without requiring local setup._
 
@@ -73,12 +73,20 @@ This script will:
 If you prefer manual setup, install the required dependencies:
 
 ```sh
-npm install @modelcontextprotocol/sdk
+npm install @modelcontextprotocol/sdk @upstash/redis
 # or
-pnpm install @modelcontextprotocol/sdk
+pnpm install @modelcontextprotocol/sdk @upstash/redis
 ```
 
-For SSE transport support, you'll also need Redis running locally:
+For SSE transport support, you have two options:
+
+#### Option 1: Upstash KV (Cloud Redis) - Recommended
+
+1. Connect to your Vercel project: `vercel link`
+2. Pull environment variables: `vercel env pull .env.development.local`
+3. The setup script will automatically detect and use Upstash Redis
+
+#### Option 2: Local Docker Redis - Development
 
 ```sh
 # Using Docker (recommended)
@@ -92,18 +100,22 @@ echo "REDIS_URL=redis://localhost:6379" > .env.local
 
 This project includes two sample clients:
 
-### SSE Client (for production with Redis)
+### SSE Client (requires Redis)
 
-`scripts/test-client.mjs` - Uses Server-Sent Events transport (requires Redis)
+`scripts/test-client.mjs` - Uses Server-Sent Events transport
 
-### HTTP Client (for local development)
+- Automatically uses Upstash Redis (cloud) or local Docker Redis
+- Requires either Upstash KV setup or local Redis container
+
+### HTTP Client (no Redis required)
 
 `scripts/test-streamable-http-client.mjs` - Uses streamable HTTP transport (no Redis required)
 
-### Testing against a deployed server:
+### Testing against the deployed server:
 
 ```sh
-node scripts/test-client.mjs https://mcp-for-next-js.vercel.app
+node scripts/test-client.mjs https://agent-engineering-bootcamp-mcp.vercel.app
+node scripts/test-streamable-http-client.mjs https://agent-engineering-bootcamp-mcp.vercel.app
 ```
 
 ### Testing against your local development server:
@@ -125,6 +137,43 @@ node scripts/test-streamable-http-client.mjs http://localhost:3000
 ```
 
 The HTTP client connects to `/mcp` endpoint, while the SSE client connects to `/sse` endpoint.
+
+## Redis Configuration
+
+The MCP server automatically detects and uses the appropriate Redis configuration:
+
+### Priority Order:
+
+1. **Upstash Redis** (Production) - If `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` are set
+2. **Local Redis** (Development) - If `REDIS_URL` is set (typically `redis://localhost:6379`)
+3. **No Redis** - HTTP transport only, SSE transport disabled
+
+### Environment Variables:
+
+- `UPSTASH_REDIS_REST_URL` - Upstash Redis REST API URL
+- `UPSTASH_REDIS_REST_TOKEN` - Upstash Redis REST API token
+- `REDIS_URL` - Local Redis connection URL (fallback)
+
+### Setting up Upstash KV (Recommended for Production)
+
+1. **Link your Vercel project:**
+
+   ```sh
+   vercel link
+   ```
+
+2. **Pull environment variables from Vercel:**
+
+   ```sh
+   vercel env pull .env.development.local
+   ```
+
+3. **Run setup (will automatically detect Upstash):**
+   ```sh
+   pnpm run setup
+   ```
+
+The system will automatically detect Upstash Redis configuration and use it instead of local Docker Redis.
 
 ## Testing with Claude Desktop
 
@@ -276,7 +325,9 @@ This Agent Engineering Bootcamp MCP server includes:
 
 ## Notes for running on Vercel
 
-- To use the SSE transport, requires a Redis attached to the project under `process.env.REDIS_URL`
+- **Redis**: The SSE transport automatically uses Upstash KV when available, or falls back to `REDIS_URL`
+  - Recommended: Use Upstash KV integration in Vercel dashboard
+  - Alternative: Set `REDIS_URL` environment variable manually
 - Make sure you have [Fluid compute](https://vercel.com/docs/functions/fluid-compute) enabled for efficient execution
-- After enabling Fluid compute, open `app/route.ts` and adjust `maxDuration` to 800 if you using a Vercel Pro or Enterprise account
+- After enabling Fluid compute, open `app/[transport]/route.ts` and adjust `maxDuration` to 800 if you using a Vercel Pro or Enterprise account
 - [Deploy the Next.js MCP template](https://vercel.com/templates/next.js/model-context-protocol-mcp-with-next-js)
