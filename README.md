@@ -1,4 +1,4 @@
-# Example Next.js MCP Server
+# Agent Engineering Bootcamp MCP
 
 ## Setup
 
