@@ -75,6 +75,89 @@ node scripts/test-streamable-http-client.mjs http://localhost:3000
 
 The HTTP client connects to `/mcp` endpoint, while the SSE client connects to `/sse` endpoint.
 
+## Testing with Claude Desktop
+
+You can test this MCP server with Claude Desktop to see the agent bootcamp prompt in action.
+
+### Prerequisites
+
+- [Claude Desktop](https://claude.ai/download) installed and updated to the latest version
+- This project running locally
+
+### Configuration
+
+1. **Start your development server:**
+
+   ```sh
+   pnpm run setup  # This starts the dev server automatically
+   ```
+
+2. **Configure Claude Desktop:**
+
+   Open your Claude Desktop configuration file:
+
+   **macOS:**
+
+   ```sh
+   code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+   ```
+
+   **Windows:**
+
+   ```sh
+   code %APPDATA%\Claude\claude_desktop_config.json
+   ```
+
+3. **Add the server configuration:**
+
+   ```json
+   {
+     "mcpServers": {
+       "agent-bootcamp": {
+         "command": "node",
+         "args": [
+           "/ABSOLUTE/PATH/TO/YOUR/PROJECT/scripts/test-streamable-http-client.mjs",
+           "http://localhost:3000"
+         ]
+       }
+     }
+   }
+   ```
+
+   **Important:** Replace `/ABSOLUTE/PATH/TO/YOUR/PROJECT` with the actual absolute path to your project directory.
+
+4. **Restart Claude Desktop** completely to pick up the new configuration.
+
+### Testing the Prompt
+
+Once configured, you should see a tools icon (🔨) in Claude Desktop. You can now test the agent bootcamp prompt:
+
+1. Look for the "Search and tools" icon in Claude Desktop
+2. You should see the `agent-bootcamp` prompt available
+3. Try asking: _"Help me setup my project for the agent engineering bootcamp"_
+4. Claude will walk you through the step-by-step setup process!
+
+### Troubleshooting
+
+**Server not showing up:**
+
+- Check your `claude_desktop_config.json` syntax is valid JSON
+- Ensure the path is absolute, not relative
+- Make sure your development server is running on `http://localhost:3000`
+- Check Claude's logs: `tail -f ~/Library/Logs/Claude/mcp*.log` (macOS)
+
+**Tool calls failing:**
+
+- Verify the server is accessible at `http://localhost:3000/mcp`
+- Check the Claude logs for specific error messages
+- Try running `pnpm test:http` to verify the server is working
+
+## Add to Cursor
+
+[![Add to Cursor](https://cursor.directory/add.svg)](cursor://clone?url=https://github.com/[YOUR-USERNAME]/agent-engineering-bootcamp-mcp)
+
+_Replace `[YOUR-USERNAME]` with your actual GitHub username when you publish this repository._
+
 ## Development Workflow
 
 ### Starting Development
