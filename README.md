@@ -1,12 +1,20 @@
-# Agent Engineering Bootcamp MCP
+# Agent Engineering Bootcamp MCP 🤖
 
-## Add to Cursor
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhainghiem%2Fagent-engineering-bootcamp-mcp&env=REDIS_URL)
 
-Get instant access to the Agent Engineering Bootcamp intelligent onboarding in Cursor:
+<a href="https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJ1cmwiOiJodHRwczovL2FnZW50LWVuZ2luZWVyaW5nLWJvb3RjYW1wLW1jcC52ZXJjZWwuYXBwL3NzZSJ9"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add agent-bootcamp MCP server to Cursor" height="32" /></a>
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZXZlcnl0aGluZyIsImh0dHBzOi8vYWdlbnQtZW5naW5lZXJpbmctYm9vdGNhbXAtbWNwLnZlcmNlbC5hcHAvbWNwIl19)
+A Model Context Protocol server providing setup guidance for students learning agent development. This project serves both as an educational resource and a template for building your own MCP servers with Next.js.
 
-_The hosted server provides the same agent bootcamp setup instructions without requiring local setup._
+## 🚀 Quick Start
+
+Get instant access to the Agent Engineering Bootcamp intelligent onboarding:
+
+### One-Click Installation
+
+<a href="https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJ1cmwiOiJodHRwczovL2FnZW50LWVuZ2luZWVyaW5nLWJvb3RjYW1wLW1jcC52ZXJjZWwuYXBwL3NzZSJ9"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add agent-bootcamp MCP server to Cursor" height="32" /></a>
+
+_Click the button above to automatically add this MCP server to Cursor._
 
 ## For Developers: Local Development Setup
 

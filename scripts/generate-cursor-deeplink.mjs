@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Configuration for hosted server
+// Configuration for hosted server - just the transport config
 const hostedConfig = {
   url: "https://agent-engineering-bootcamp-mcp.vercel.app/sse",
 };
@@ -17,26 +17,32 @@ const localConfig = {
 
 // Generate URLs for both configurations
 function generateDeepLink(config, serverName = "agent-bootcamp") {
-  const configStr = JSON.stringify({ [serverName]: config });
-  const encodedConfig = encodeURIComponent(configStr);
-  return `https://cursor.com/install-mcp?config=${encodedConfig}`;
+  // Base64 encode the config (not the whole server object)
+  const configStr = JSON.stringify(config);
+  const base64Config = Buffer.from(configStr).toString("base64");
+
+  // URL encode the base64 string
+  const encodedConfig = encodeURIComponent(base64Config);
+
+  return `https://cursor.com/install-mcp?name=${serverName}&config=${encodedConfig}`;
+}
+
+// Generate HTML button
+function generateButton(config, serverName = "agent-bootcamp") {
+  const url = generateDeepLink(config, serverName);
+  return `<a href="${url}"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add ${serverName} MCP server to Cursor" height="32" /></a>`;
 }
 
 console.log("=== Cursor MCP Installation Links ===\n");
 
 console.log("For HOSTED server (recommended):");
 console.log(generateDeepLink(hostedConfig));
+console.log("\nHTML Button:");
+console.log(generateButton(hostedConfig));
 console.log("\n");
 
 console.log("For LOCAL development:");
 console.log(generateDeepLink(localConfig));
-console.log("\n");
-
-console.log("=== How to use ===");
-console.log("1. Copy the appropriate link above");
-console.log("2. Open it in your browser");
-console.log("3. Cursor will prompt to add the MCP server");
-console.log("4. Restart Cursor after installation");
 console.log("\n");
 
 console.log("=== Manual Configuration ===");
