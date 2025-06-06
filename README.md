@@ -84,7 +84,7 @@ pnpm run setup  # Sets up Redis and environment
 pnpm dev        # Starts Next.js development server
 ```
 
-### Testing Both Transports
+### Testing All Features
 
 ```sh
 # Test SSE transport (requires Redis)
@@ -92,6 +92,9 @@ pnpm test:sse
 
 # Test HTTP transport (no Redis required)
 pnpm test:http
+
+# Test prompts functionality
+pnpm test:prompts
 ```
 
 Or use the full commands:
@@ -99,6 +102,7 @@ Or use the full commands:
 ```sh
 node scripts/test-client.mjs http://localhost:3000
 node scripts/test-streamable-http-client.mjs http://localhost:3000
+node scripts/test-prompts.mjs http://localhost:3000
 ```
 
 ### Managing Redis Container
@@ -121,6 +125,26 @@ docker rm redis-mcp
 This sample app uses the [Vercel MCP Adapter](https://www.npmjs.com/package/@vercel/mcp-adapter) that allows you to drop in an MCP server on a group of routes in any Next.js project.
 
 Update `app/[transport]/route.ts` with your tools, prompts, and resources following the [MCP TypeScript SDK documentation](https://github.com/modelcontextprotocol/typescript-sdk/tree/main?tab=readme-ov-file#server).
+
+## Features
+
+This example includes:
+
+### 🔧 Tools
+
+- **Echo Tool** - Simple tool that echoes back a message (for testing)
+
+### 📝 Prompts
+
+- **Agent Bootcamp Setup** - Helps students set up their development environment for agent engineering
+  - Supports both Python (uv + FastAPI) and TypeScript (Next.js) paths
+  - Stored in `/prompts/agent-bootcamp.md`
+  - Customizable based on language preference
+
+### 🚀 Transports
+
+- **HTTP Transport** - Stateless HTTP requests (no Redis required)
+- **SSE Transport** - Server-Sent Events with Redis for state management
 
 ## Notes for running on Vercel
 

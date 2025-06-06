@@ -34,18 +34,27 @@ else
     fi
 fi
 
+ENV_CREATED=false
 if [ ! -f .env.local ]; then
     echo "📝 Creating .env.local file..."
     echo "REDIS_URL=redis://localhost:6379" > .env.local
     echo "✅ Created .env.local with Redis configuration"
+    ENV_CREATED=true
 else
     if ! grep -q "REDIS_URL" .env.local; then
         echo "📝 Adding Redis URL to existing .env.local..."
         echo "REDIS_URL=redis://localhost:6379" >> .env.local
         echo "✅ Added Redis configuration to .env.local"
+        ENV_CREATED=true
     else
         echo "✅ Redis URL already configured in .env.local"
     fi
+fi
+
+if [ "$ENV_CREATED" = true ]; then
+    echo "🔄 Stopping any running Next.js server to pick up new environment variables..."
+    pkill -f "next dev" 2>/dev/null || true
+    sleep 2
 fi
 
 echo ""
