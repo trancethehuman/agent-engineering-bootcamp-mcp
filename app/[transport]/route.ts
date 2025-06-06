@@ -9,9 +9,9 @@ const handler = createMcpHandler(
     // @ts-ignore
     server.tool(
       "echo",
-      "description",
+      "Echo a message for testing purposes",
       {
-        message: z.string(),
+        message: z.string().describe("The message to echo back"),
       },
       async ({ message }) => ({
         content: [{ type: "text", text: `Tool echo: ${message}` }],
@@ -19,11 +19,14 @@ const handler = createMcpHandler(
     );
 
     // @ts-ignore
-    server.prompt(
-      "agent-bootcamp",
-      "Get setup instructions for the Agent Engineering Bootcamp",
+    server.tool(
+      "get-agent-bootcamp-setup",
+      "Get step-by-step setup instructions for the Agent Engineering Bootcamp",
       {
-        language: z.enum(["python", "typescript"]).optional(),
+        language: z
+          .enum(["python", "typescript"])
+          .optional()
+          .describe("Programming language preference for setup instructions"),
       },
       async ({ language }) => {
         const promptContent = readFileSync(
@@ -34,11 +37,6 @@ const handler = createMcpHandler(
         let customizedContent = promptContent;
 
         if (language) {
-          const langSection =
-            language === "python"
-              ? "### For Python Developers"
-              : "### For TypeScript Developers";
-
           const sections = promptContent.split("### For ");
           const header = sections[0];
           const targetSection = sections.find((section) =>
@@ -52,13 +50,16 @@ const handler = createMcpHandler(
         }
 
         return {
-          messages: [
+          content: [
             {
-              role: "user",
-              content: {
-                type: "text",
-                text: `Here are the setup instructions for the Agent Engineering Bootcamp. Make sure to walk the user through this step-by-step:\n\n${customizedContent}`,
-              },
+              type: "text",
+              text: `# Agent Engineering Bootcamp Setup Guide
+
+${customizedContent}
+
+---
+
+*Use this guide to set up your development environment for agent engineering. Follow each step carefully and check in with the AI assistant at each checkpoint!*`,
             },
           ],
         };
@@ -69,13 +70,11 @@ const handler = createMcpHandler(
     capabilities: {
       tools: {
         echo: {
-          description: "Echo a message",
+          description: "Echo a message for testing purposes",
         },
-      },
-      prompts: {
-        "agent-bootcamp": {
+        "get-agent-bootcamp-setup": {
           description:
-            "Get setup instructions for the Agent Engineering Bootcamp",
+            "Get step-by-step setup instructions for setting up a new code project in order to begin the Agent Engineering Bootcamp",
         },
       },
     },

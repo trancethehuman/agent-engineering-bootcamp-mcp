@@ -6,7 +6,7 @@ Get instant access to the Agent Engineering Bootcamp intelligent onboarding in C
 
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZXZlcnl0aGluZyIsImh0dHBzOi8vYWdlbnQtZW5naW5lZXJpbmctYm9vdGNhbXAtbWNwLnZlcmNlbC5hcHAvbWNwIl19)
 
-_The hosted server provides the same agent bootcamp prompts without requiring local setup._
+_The hosted server provides the same agent bootcamp setup instructions without requiring local setup._
 
 ## For Developers: Local Development Setup
 
@@ -177,7 +177,7 @@ The system will automatically detect Upstash Redis configuration and use it inst
 
 ## Testing with Claude Desktop
 
-You can test this MCP server with Claude Desktop to see the agent bootcamp prompt in action.
+You can test this MCP server with Claude Desktop to use the agent bootcamp setup tool.
 
 ### Prerequisites
 
@@ -228,14 +228,14 @@ You can test this MCP server with Claude Desktop to see the agent bootcamp promp
 
 4. **Restart Claude Desktop** completely to pick up the new configuration.
 
-### Testing the Prompt
+### Testing the Tool
 
-Once configured, you should see a tools icon (🔨) in Claude Desktop. You can now test the agent bootcamp prompt:
+Once configured, you should see a tools icon (🔨) in Claude Desktop. You can now test the agent bootcamp setup tool:
 
 1. Look for the "Search and tools" icon in Claude Desktop
-2. You should see the `agent-bootcamp` prompt available
-3. Try asking: _"Help me setup my project for the agent engineering bootcamp"_
-4. Claude will walk you through the step-by-step setup process!
+2. You should see the `get-agent-bootcamp-setup` tool available
+3. Try asking: _"Help me setup my project for the agent engineering bootcamp"_ or _"Use the bootcamp setup tool"_
+4. Claude will use the tool to provide step-by-step setup instructions!
 
 ### Troubleshooting
 
@@ -270,8 +270,8 @@ pnpm test:sse
 # Test HTTP transport (no Redis required)
 pnpm test:http
 
-# Test prompts functionality
-pnpm test:prompts
+# Test agent bootcamp tool
+pnpm test:bootcamp
 ```
 
 Or use the full commands:
@@ -279,7 +279,7 @@ Or use the full commands:
 ```sh
 node scripts/test-client.mjs http://localhost:3000
 node scripts/test-streamable-http-client.mjs http://localhost:3000
-node scripts/test-prompts.mjs http://localhost:3000
+node scripts/test-bootcamp-tool.mjs http://localhost:3000
 ```
 
 ### Managing Redis Container
@@ -309,14 +309,11 @@ This Agent Engineering Bootcamp MCP server includes:
 
 ### 🔧 Tools
 
-- **Echo Tool** - Simple tool that echoes back a message (for testing)
-
-### 📝 Prompts
-
-- **Agent Bootcamp Setup** - Helps students set up their development environment for agent engineering
+- **Agent Bootcamp Setup** (`get-agent-bootcamp-setup`) - Provides step-by-step setup instructions for agent engineering
   - Supports both Python (uv + FastAPI) and TypeScript (Next.js) paths
-  - Stored in `/prompts/agent-bootcamp.md`
+  - Content stored in `/prompts/agent-bootcamp.md`
   - Customizable based on language preference
+- **Echo Tool** (`echo`) - Simple tool that echoes back a message (for testing)
 
 ### 🚀 Transports
 

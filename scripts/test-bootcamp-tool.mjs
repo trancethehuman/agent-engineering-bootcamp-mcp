@@ -13,9 +13,8 @@ async function main() {
     },
     {
       capabilities: {
-        prompts: {},
-        resources: {},
         tools: {},
+        resources: {},
       },
     }
   );
@@ -25,30 +24,30 @@ async function main() {
   console.log("🔗 Connected to MCP server");
   console.log("📋 Server capabilities:", client.getServerCapabilities());
 
-  console.log("\n📝 Listing available prompts...");
-  const prompts = await client.listPrompts();
-  console.log("Available prompts:", JSON.stringify(prompts, null, 2));
+  console.log("\n🔧 Listing available tools...");
+  const tools = await client.listTools();
+  console.log("Available tools:", JSON.stringify(tools, null, 2));
 
-  if (prompts.prompts && prompts.prompts.length > 0) {
-    console.log("\n🚀 Testing agent-bootcamp prompt...");
+  if (tools.tools && tools.tools.length > 0) {
+    console.log("\n🚀 Testing agent-bootcamp setup tool...");
 
-    const bootcampPrompt = await client.getPrompt("agent-bootcamp", {});
-    console.log("Bootcamp prompt (no language):");
-    console.log(bootcampPrompt.messages[0].content.text);
+    const bootcampTool = await client.callTool("get-agent-bootcamp-setup", {});
+    console.log("Bootcamp setup (no language):");
+    console.log(bootcampTool.content[0].text);
 
     console.log("\n🐍 Testing with Python language...");
-    const pythonPrompt = await client.getPrompt("agent-bootcamp", {
+    const pythonTool = await client.callTool("get-agent-bootcamp-setup", {
       language: "python",
     });
-    console.log("Python-specific prompt:");
-    console.log(pythonPrompt.messages[0].content.text);
+    console.log("Python-specific setup:");
+    console.log(pythonTool.content[0].text);
 
     console.log("\n📘 Testing with TypeScript language...");
-    const tsPrompt = await client.getPrompt("agent-bootcamp", {
+    const tsTool = await client.callTool("get-agent-bootcamp-setup", {
       language: "typescript",
     });
-    console.log("TypeScript-specific prompt:");
-    console.log(tsPrompt.messages[0].content.text);
+    console.log("TypeScript-specific setup:");
+    console.log(tsTool.content[0].text);
   }
 
   client.close();
