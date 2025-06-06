@@ -1,6 +1,6 @@
 # Agent Engineering Bootcamp MCP 🤖
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhainghiem%2Fagent-engineering-bootcamp-mcp&env=REDIS_URL)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftrancethehuman%2Fagent-engineering-bootcamp-mcp&env=REDIS_URL)
 
 <a href="https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJ1cmwiOiJodHRwczovL2FnZW50LWVuZ2luZWVyaW5nLWJvb3RjYW1wLW1jcC52ZXJjZWwuYXBwL3NzZSJ9"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add agent-bootcamp MCP server to Cursor" height="32" /></a>
 

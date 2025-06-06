@@ -142,29 +142,24 @@ export default function HomePage() {
             simple example of how to build an MCP server using Next.js.
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Provides setup guidance and best practices for students learning
-            agent development
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="buttons">
             <a
               href="https://cursor.com/install-mcp?name=agent-bootcamp&config=eyJ1cmwiOiJodHRwczovL2FnZW50LWVuZ2luZWVyaW5nLWJvb3RjYW1wLW1jcC52ZXJjZWwuYXBwL3NzZSJ9"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="cursor-btn"
             >
               <img
                 src="https://cursor.com/deeplink/mcp-install-dark.svg"
                 alt="Add agent-bootcamp MCP server to Cursor"
-                className="h-8"
+                height="32"
               />
             </a>
 
             <a
-              href="https://github.com/hainghiem/agent-engineering-bootcamp-mcp"
-              className="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors dark:bg-gray-700 dark:hover:bg-gray-600"
+              href="https://github.com/trancethehuman/agent-engineering-bootcamp-mcp"
+              className="github-btn"
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="github-icon"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
