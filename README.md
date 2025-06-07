@@ -437,5 +437,3 @@ If Cursor isn't detecting your MCP server tools:
    ```bash
    node scripts/test-http-tools.mjs
    ```
-
-### Redis Connection Issues
