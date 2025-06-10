@@ -31,19 +31,22 @@ async function main() {
   if (tools.tools && tools.tools.length > 0) {
     console.log("\n🚀 Testing agent-bootcamp setup tool...");
 
-    const bootcampTool = await client.callTool("get-agent-bootcamp-setup", {});
+    const bootcampTool = await client.callTool(
+      "get-agent-bootcamp-setup-guide",
+      {}
+    );
     console.log("Bootcamp setup (no language):");
     console.log(bootcampTool.content[0].text);
 
     console.log("\n🐍 Testing with Python language...");
-    const pythonTool = await client.callTool("get-agent-bootcamp-setup", {
+    const pythonTool = await client.callTool("get-agent-bootcamp-setup-guide", {
       language: "python",
     });
     console.log("Python-specific setup:");
     console.log(pythonTool.content[0].text);
 
     console.log("\n📘 Testing with TypeScript language...");
-    const tsTool = await client.callTool("get-agent-bootcamp-setup", {
+    const tsTool = await client.callTool("get-agent-bootcamp-setup-guide", {
       language: "typescript",
     });
     console.log("TypeScript-specific setup:");

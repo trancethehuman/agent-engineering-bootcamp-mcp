@@ -254,7 +254,7 @@ You can test this MCP server with Claude Desktop to use the agent bootcamp setup
 Once configured, you should see a tools icon (🔨) in Claude Desktop. You can now test the agent bootcamp setup tool:
 
 1. Look for the "Search and tools" icon in Claude Desktop
-2. You should see the `get-agent-bootcamp-setup` tool available
+2. You should see the `get-agent-bootcamp-setup-guide` tool available
 3. Try asking: _"Help me setup my project for the agent engineering bootcamp"_ or _"Use the bootcamp setup tool"_
 4. Claude will use the tool to provide step-by-step setup instructions!
 
@@ -330,9 +330,9 @@ This Agent Engineering Bootcamp MCP server includes:
 
 ### 🔧 Tools
 
-- **Agent Bootcamp Setup** (`get-agent-bootcamp-setup`) - Provides step-by-step setup instructions for agent engineering
+- **Agent Bootcamp Setup** (`get-agent-bootcamp-setup-guide`) - Provides step-by-step setup instructions for agent engineering
   - Supports both Python (uv + FastAPI) and TypeScript (Next.js) paths
-  - Content stored in `/prompts/agent-bootcamp.md`
+  - Content stored in `/prompts/agent-bootcamp-project-setup-guide.md`
   - Customizable based on language preference
 - **Echo Tool** (`echo`) - Simple tool that echoes back a message (for testing)
 
@@ -407,7 +407,7 @@ For older versions, use the proxy approach:
 The server exposes the following tools:
 
 - `echo` - Echo a message for testing purposes
-- `get-agent-bootcamp-setup` - Get step-by-step setup instructions for the Agent Engineering Bootcamp
+- `get-agent-bootcamp-setup-guide` - Get step-by-step setup instructions for the Agent Engineering Bootcamp
 
 ## 🧪 Testing
 

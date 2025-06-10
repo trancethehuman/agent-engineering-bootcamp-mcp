@@ -1,2 +1,2 @@
 export { echoTool } from "./echo";
-export { agentBootcampTool } from "./agent-bootcamp";
+export { getBootcampProjectSetupGuide } from "./agent-bootcamp";

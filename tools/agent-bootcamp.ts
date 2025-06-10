@@ -2,8 +2,8 @@ import { z } from "zod";
 import { readFileSync } from "fs";
 import { join } from "path";
 
-export const agentBootcampTool = {
-  name: "get-agent-bootcamp-setup",
+export const getBootcampProjectSetupGuide = {
+  name: "get-agent-bootcamp-setup-guide",
   description:
     "Get step-by-step setup instructions for the Agent Engineering Bootcamp",
   schema: {
@@ -14,7 +14,7 @@ export const agentBootcampTool = {
   },
   handler: async ({ language }: { language?: "python" | "typescript" }) => {
     const promptContent = readFileSync(
-      join(process.cwd(), "prompts", "agent-bootcamp.md"),
+      join(process.cwd(), "prompts", "agent-bootcamp-project-setup-guide.md"),
       "utf-8"
     );
 

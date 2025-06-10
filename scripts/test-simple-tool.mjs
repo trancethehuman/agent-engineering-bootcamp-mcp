@@ -33,9 +33,12 @@ async function main() {
 
     // Test bootcamp setup tool
     console.log("\n🚀 Testing bootcamp setup tool...");
-    const bootcampResult = await client.callTool("get-agent-bootcamp-setup", {
-      language: "typescript",
-    });
+    const bootcampResult = await client.callTool(
+      "get-agent-bootcamp-setup-guide",
+      {
+        language: "typescript",
+      }
+    );
     console.log(
       "Bootcamp result length:",
       bootcampResult.content[0].text.length
