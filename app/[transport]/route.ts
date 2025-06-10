@@ -4,6 +4,7 @@ import {
   echoTool,
   getBootcampProjectSetupGuide,
   bootcampScheduleTool,
+  joinBootcampTool,
 } from "../../tools";
 
 const handler = createMcpHandler(
@@ -27,6 +28,13 @@ const handler = createMcpHandler(
       bootcampScheduleTool.description,
       bootcampScheduleTool.schema,
       bootcampScheduleTool.handler
+    );
+
+    server.tool(
+      joinBootcampTool.name,
+      joinBootcampTool.description,
+      joinBootcampTool.schema,
+      joinBootcampTool.handler
     );
   },
   {},
