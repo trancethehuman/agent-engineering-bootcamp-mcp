@@ -14,7 +14,7 @@ export const getBootcampProjectSetupGuide = {
   },
   handler: async ({ language }: { language?: "python" | "typescript" }) => {
     const promptContent = readFileSync(
-      join(process.cwd(), "prompts", "agent-bootcamp-project-setup-guide.md"),
+      join(process.cwd(), "prompts", "agent-bootcamp-setup-guide.md"),
       "utf-8"
     );
 

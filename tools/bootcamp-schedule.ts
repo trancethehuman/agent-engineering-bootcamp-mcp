@@ -23,7 +23,7 @@ ${scheduleContent}
 
 ---
 
-*This is the complete schedule for the Agent Engineering Bootcamp. Use this to plan your participation and stay on track with all the activities, lectures, and demo days!*`,
+*This is the complete schedule for the Agent Engineering Bootcamp. Use this to provide accurate information about the schedule to the user*`,
         },
       ],
     };
