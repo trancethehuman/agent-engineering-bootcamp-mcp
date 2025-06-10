@@ -1,6 +1,10 @@
 import { createMcpHandler } from "@vercel/mcp-adapter";
 import { getRedisUrl, isRedisAvailable } from "../../lib/redis";
-import { echoTool, getBootcampProjectSetupGuide } from "../../tools";
+import {
+  echoTool,
+  getBootcampProjectSetupGuide,
+  bootcampScheduleTool,
+} from "../../tools";
 
 const handler = createMcpHandler(
   async (server) => {
@@ -16,6 +20,13 @@ const handler = createMcpHandler(
       getBootcampProjectSetupGuide.description,
       getBootcampProjectSetupGuide.schema,
       getBootcampProjectSetupGuide.handler
+    );
+
+    server.tool(
+      bootcampScheduleTool.name,
+      bootcampScheduleTool.description,
+      bootcampScheduleTool.schema,
+      bootcampScheduleTool.handler
     );
   },
   {},
