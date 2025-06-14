@@ -48,154 +48,198 @@ uv --version
 
 **🔄 Check-in:** Please run `uv --version` and let me know if it works before we continue.
 
-### Step 3A: Project Setup Decision
-
-**Do you want to:**
-
-1. **Create a new agent project from scratch**, or
-2. **Add agent capabilities to your current project**?
-
-Please let me know your choice.
-
-#### Option 1: New Agent Project
+### Step 3A: Create New Project
 
 ```bash
-uv init my-agent-project
-cd my-agent-project
-uv add openai-agents fastapi uvicorn python-dotenv
+uv init my-project
+cd my-project
 ```
 
-#### Option 2: Add to Current Project
+### Step 4A: Install LiteLLM
+
+LiteLLM allows you to call 100+ LLMs using the OpenAI input/output format, providing a unified interface for different AI providers.
 
 ```bash
-uv add openai-agents fastapi uvicorn python-dotenv
+uv add litellm python-dotenv
 ```
 
-### Step 4A: Set Up OpenAI Agents SDK
+**🔄 Check-in:** Please run this command and let me know if the installation completes successfully.
 
-Create a `.env` file in your project root:
+### Step 5A: Create Your First LiteLLM Example
 
-```bash
-echo "OPENAI_API_KEY=your-api-key-here" > .env
-```
-
-Create a simple agent example (`main.py`):
+Create a simple example file (`main.py`) to test LiteLLM:
 
 ```python
-from agents import Agent, Runner
+from litellm import completion
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-agent = Agent(
-    name="Assistant",
-    instructions="You are a helpful assistant for agent engineering."
+os.environ["OPENAI_API_KEY"] = "your-api-key-here"
+
+response = completion(
+    model="openai/gpt-4o",
+    messages=[{"content": "Hello, how are you?", "role": "user"}]
 )
 
-result = Runner.run_sync(agent, "Say hello and introduce yourself!")
-print(result.final_output)
+print(response.choices[0].message.content)
 ```
 
-**🔄 Check-in:** Please create these files and let me know if you encounter any issues.
+Also create a `.env` file in your project root:
+
+```bash
+OPENAI_API_KEY=your-actual-api-key-here
+```
+
+**🔄 Check-in:** Please create these files and let me know when you're ready to test the setup.
 
 ---
 
 ## For TypeScript Developers
 
-### Step 2B: Choose Your Agent Framework
-
-**Which framework would you like to use for building agents?**
-
-1. **OpenAI Agents SDK** - Purpose-built for agent development with handoffs, guardrails, and tracing
-2. **Vercel AI SDK** - Flexible AI toolkit with great Next.js integration
-
-Please tell me your preference.
-
-#### Option 1: OpenAI Agents SDK
-
-**Installation:**
+### Step 2B: Create New Project
 
 ```bash
-npm install @openai/agents
+npx create-next-app@latest my-project --typescript --tailwind --eslint
+cd my-project
 ```
 
-**Project Setup Decision:**
+**🔄 Check-in:** Let me know if the project creation completed successfully.
 
-- **New project:** `npx create-next-app@latest my-agent-project --typescript`
-- **Current project:** Continue in your existing directory
+### Step 3B: Install AI SDK
 
-**Simple example (`agent.ts`):**
+Install the AI SDK and OpenAI provider:
+
+```bash
+pnpm install ai @ai-sdk/openai
+```
+
+**🔄 Check-in:** Please run this command and let me know if the installation completes successfully.
+
+### Step 4B: Create Chat API Route
+
+Create an API route file at `app/api/chat/route.ts`:
 
 ```typescript
-import { Agent, run } from "@openai/agents";
+import { streamText } from "ai";
+import { openai } from "@ai-sdk/openai";
 
-const agent = new Agent({
-  name: "Assistant",
-  instructions: "You are a helpful assistant for agent engineering.",
-});
+export async function POST(req: Request) {
+  const { messages } = await req.json();
 
-const result = await run(agent, "Say hello and introduce yourself!");
-console.log(result.finalOutput);
+  const result = streamText({
+    model: openai("gpt-4o"),
+    messages,
+  });
+
+  return result.toDataStreamResponse();
+}
 ```
 
-#### Option 2: Vercel AI SDK with Next.js
+### Step 5B: Create Frontend Component
 
-**Project setup:**
+Create a simple frontend at `app/page.tsx`:
+
+```typescript
+"use client";
+
+import { useChat } from "ai/react";
+
+export default function Chat() {
+  const { messages, input, handleInputChange, handleSubmit, isLoading } =
+    useChat();
+
+  const generatePoem = () => {
+    handleSubmit(new Event("submit") as any, {
+      data: {
+        messages: [
+          {
+            role: "user",
+            content: "Write a beautiful short poem about coding and AI",
+          },
+        ],
+      },
+    });
+  };
+
+  return (
+    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="text-2xl font-bold text-center mb-6">AI Poem Generator</h1>
+
+      <button
+        onClick={generatePoem}
+        disabled={isLoading}
+        className="w-full bg-blue-500 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded"
+      >
+        {isLoading ? "Generating..." : "Generate a Poem"}
+      </button>
+
+      <div className="mt-6">
+        {messages.map((m) => (
+          <div key={m.id} className="mb-4">
+            {m.role === "assistant" && (
+              <div className="bg-gray-100 p-4 rounded-lg">
+                <pre className="whitespace-pre-wrap font-serif">
+                  {m.content}
+                </pre>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+Also create a `.env.local` file in your project root:
 
 ```bash
-npx create-next-app@latest my-agent-project --typescript --tailwind --eslint
-cd my-agent-project
-npm install ai @ai-sdk/openai
+OPENAI_API_KEY=your-actual-api-key-here
 ```
 
-**Environment setup:**
-
-```bash
-echo "OPENAI_API_KEY=your-api-key-here" > .env.local
-```
-
-**🔄 Check-in:** Let me know which option you chose and if the installation completed successfully.
+**🔄 Check-in:** Please create these files and let me know when you're ready to test the setup.
 
 ---
 
 ## Final Steps (All Developers)
 
-### Step 5: API Key Setup
+### Step 3: API Key Setup
 
-1. **Get your OpenAI API key** from [OpenAI Platform](https://platform.openai.com/api-keys)
-2. **Add it to your environment variables** (`.env` for Python, `.env.local` for Next.js)
-3. **Never commit your API keys to version control!**
+1. **Sign up/Login to OpenAI** at [https://platform.openai.com/login](https://platform.openai.com/login)
+2. **Get your OpenAI API key** from [OpenAI Platform API Keys](https://platform.openai.com/api-keys)
+3. **Add it to your environment variables** (`.env` for Python, `.env.local` for Next.js)
+4. **Never commit your API keys to version control!**
 
-### Step 6: Test Your Setup
+**🔄 Check-in:** Please get your API key and add it to your environment file before proceeding.
 
-Run your example code to make sure everything works:
+### Step 4: Test Your LLM Integration
 
-**Python:**
+Now let's test that your LLM integration is working:
+
+**For Python:**
+
+Run your Python script:
 
 ```bash
 uv run python main.py
 ```
 
-**TypeScript/Node:**
+You should see a response from the AI model printed to your terminal.
+
+**For TypeScript/Next.js:**
+
+1. Start your development server:
 
 ```bash
-npm run dev  # for Next.js
-# or
-npx tsx agent.ts  # for standalone TypeScript
+pnpm run dev
 ```
 
-**🔄 Final Check-in:** Please test your setup and let me know if you see a successful response from your agent!
+2. Open your browser and go to `http://localhost:3000`
 
-## Next Steps
+3. Click the "Generate a Poem" button
 
-Once your environment is working:
+You should see a beautiful poem about coding and AI appear on the page, streaming in real-time!
 
-- ✅ Explore the agent framework documentation
-- ✅ Join the Discord community for support
-- ✅ Start with the "Hello World Agent" tutorial
-- ✅ Begin building your first real agent project
-
-**Remember:** I'm here to help at every step. Don't hesitate to ask questions if anything doesn't work as expected!
-
-Happy coding! 🚀
+**🔄 Final Check-in:** Please test your setup and let me know if you see a successful response from the AI model!
