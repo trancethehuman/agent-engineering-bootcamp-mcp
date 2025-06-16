@@ -71,12 +71,9 @@ Create a simple example file (`main.py`) to test LiteLLM:
 
 ```python
 from litellm import completion
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
-os.environ["OPENAI_API_KEY"] = "your-api-key-here"
 
 response = completion(
     model="openai/gpt-4o",
@@ -90,6 +87,20 @@ Also create a `.env` file in your project root:
 
 ```bash
 OPENAI_API_KEY=your-actual-api-key-here
+```
+
+### Step 6A: Add .env to .gitignore
+
+To prevent accidentally committing your API keys to version control, add `.env` to your `.gitignore` file:
+
+```bash
+echo ".env" >> .gitignore
+```
+
+Or if you prefer to edit manually, create/update `.gitignore` and add this line:
+
+```
+.env
 ```
 
 **🔄 Check-in:** Please create these files and let me know when you're ready to test the setup.
