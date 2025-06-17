@@ -109,14 +109,16 @@ Or if you prefer to edit manually, create/update `.gitignore` and add this line:
 
 ## For TypeScript Developers
 
+The complete code can be found here: https://github.com/trancethehuman/my-agent-bootcamp
+
 ### Step 2B: Create New Project
 
 ```bash
-npx create-next-app@latest my-project --typescript --tailwind --eslint
-cd my-project
+npx create-next-app@latest YOUR-PROJECT-NAME --typescript --tailwind --eslint
+cd YOUR-PROJECT-NAME
 ```
 
-**🔄 Check-in:** Let me know if the project creation completed successfully.
+**🔄 Check-in:** Verify the project creation completed successfully.
 
 ### Step 3B: Install AI SDK
 
@@ -126,91 +128,198 @@ Install the AI SDK and OpenAI provider:
 pnpm install ai @ai-sdk/openai
 ```
 
-**🔄 Check-in:** Please run this command and let me know if the installation completes successfully.
+**🔄 Check-in:** Run this command and verify the installation completes successfully.
 
 ### Step 4B: Create Chat API Route
 
 Create an API route file at `app/api/chat/route.ts`:
 
-```typescript
+```tsx
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
 
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  try {
+    const { messages } = await req.json();
 
-  const result = streamText({
-    model: openai("gpt-4o"),
-    messages,
-  });
+    const result = streamText({
+      model: openai("gpt-4o"),
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a creative poet. Write beautiful, original poems about nature, life, or dreams. Make them thoughtful and inspiring.",
+        },
+        ...messages,
+      ],
+    });
 
-  return result.toDataStreamResponse();
+    return result.toDataStreamResponse();
+  } catch (error) {
+    console.error("Error generating poem:", error);
+    return Response.json({ error: "Failed to generate poem" }, { status: 500 });
+  }
 }
 ```
 
-### Step 5B: Create Frontend Component
+### Step 5B: Install Shadcn UI components
 
-Create a simple frontend at `app/page.tsx`:
+Run the following in the root directory of your project:
 
-```typescript
+```bash
+pnpm dlx shadcn@latest init
+```
+
+### Step 6B: Add the `card` and `button` components from Shadcn to your project
+
+```bash
+pnpm dlx shadcn@latest add button card
+```
+
+### Step 7B: Create a Poem Card component
+
+Create a file, `components/poem-card.tsx`:
+
+```tsx
 "use client";
 
-import { useChat } from "ai/react";
+import { useState, useRef, useEffect } from "react";
+import { useChat } from "@ai-sdk/react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat();
+export default function PoemCard() {
+  const [showPoem, setShowPoem] = useState(false);
+  const poemContainerRef = useRef<HTMLDivElement>(null);
 
-  const generatePoem = () => {
-    handleSubmit(new Event("submit") as any, {
-      data: {
-        messages: [
-          {
-            role: "user",
-            content: "Write a beautiful short poem about coding and AI",
-          },
-        ],
-      },
+  const { messages, append, reload, status } = useChat({
+    api: "/api/chat",
+    onFinish: () => {
+      setShowPoem(true);
+    },
+  });
+
+  const currentPoem =
+    messages.find((m) => m.role === "assistant")?.content || "";
+
+  const isLoading = status === "submitted" || status === "streaming";
+
+  useEffect(() => {
+    if (poemContainerRef.current && currentPoem) {
+      poemContainerRef.current.scrollTop =
+        poemContainerRef.current.scrollHeight;
+    }
+  }, [currentPoem]);
+
+  const handleGeneratePoem = async () => {
+    setShowPoem(true);
+    await append({
+      role: "user",
+      content: "Please write me a beautiful poem.",
     });
   };
 
+  const handleRegeneratePoem = async () => {
+    await reload();
+  };
+
+  const handleHidePoem = () => {
+    setShowPoem(false);
+  };
+
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-      <h1 className="text-2xl font-bold text-center mb-6">AI Poem Generator</h1>
-
-      <button
-        onClick={generatePoem}
-        disabled={isLoading}
-        className="w-full bg-blue-500 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-2 px-4 rounded"
-      >
-        {isLoading ? "Generating..." : "Generate a Poem"}
-      </button>
-
-      <div className="mt-6">
-        {messages.map((m) => (
-          <div key={m.id} className="mb-4">
-            {m.role === "assistant" && (
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <pre className="whitespace-pre-wrap font-serif">
-                  {m.content}
-                </pre>
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Discover a Poem</CardTitle>
+        <CardDescription>
+          Click the button below to generate a unique poem with AI.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {!showPoem && (
+          <Button
+            onClick={handleGeneratePoem}
+            className="w-full"
+            disabled={isLoading}
+          >
+            {isLoading ? "Generating Poem..." : "Generate Poem"}
+          </Button>
+        )}
+        {showPoem && (
+          <div
+            ref={poemContainerRef}
+            className="whitespace-pre-wrap text-sm text-muted-foreground max-h-60 overflow-y-auto p-2 border rounded-md scroll-smooth"
+          >
+            {currentPoem}
+            {isLoading && (
+              <div className="text-center text-xs text-gray-500 mt-2">
+                ✨ Creating your poem...
               </div>
             )}
           </div>
-        ))}
-      </div>
+        )}
+      </CardContent>
+      {showPoem && (
+        <CardFooter className="space-x-2">
+          <Button
+            onClick={handleRegeneratePoem}
+            variant="outline"
+            className="flex-1"
+            disabled={isLoading}
+          >
+            {isLoading ? "Regenerating..." : "Regenerate"}
+          </Button>
+          <Button
+            onClick={handleHidePoem}
+            variant="outline"
+            className="flex-1"
+            disabled={isLoading}
+          >
+            Hide Poem
+          </Button>
+        </CardFooter>
+      )}
+    </Card>
+  );
+}
+```
+
+### Step 8B: Modify the root page
+
+Open the root page, `app/page.tsx` and modify it to be like below:
+
+```tsx
+import PoemCard from "@/components/poem-card";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex items-center justify-center p-8">
+      <PoemCard />
     </div>
   );
 }
 ```
 
-Also create a `.env.local` file in your project root:
+### Step 9B: Obtain your OpenAI API key
+
+Go to https://openai.com/api/ and get your API key. Put $5 on your account so you're not rate-limited.
+
+### Step 10B: Create a .env.local file to store the API key
+
+Create a `.env.local` file in your project root:
 
 ```bash
 OPENAI_API_KEY=your-actual-api-key-here
 ```
 
-**🔄 Check-in:** Please create these files and let me know when you're ready to test the setup.
+**🔄 Check-in:** Create these files and verify they're ready for testing.
 
 ---
 
@@ -253,4 +362,8 @@ pnpm run dev
 
 You should see a beautiful poem about coding and AI appear on the page, streaming in real-time!
 
-**🔄 Final Check-in:** Please test your setup and let me know if you see a successful response from the AI model!
+**🔄 Final Check-in:** Test your setup and verify you see a successful response from the AI model streaming on the page!
+
+### Next Steps
+
+Congratulations! You now have a working TypeScript/Next.js environment with AI SDK integration. You can start building your AI agents and applications using this foundation.
