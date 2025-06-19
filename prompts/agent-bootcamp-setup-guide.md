@@ -111,7 +111,61 @@ Or if you prefer to edit manually, create/update `.gitignore` and add this line:
 
 The complete code can be found here: https://github.com/trancethehuman/my-agent-bootcamp
 
-### Step 2B: Create New Project
+### Step 2B: Install Node.js
+
+**Installation Guide:** Follow the official Node.js installation documentation
+
+**Quick hints by platform:**
+
+- **macOS:** Homebrew, direct download, or version managers (nvm/fnm)
+- **Windows:** Direct download, package managers, or version managers
+- **Linux:** Package manager, direct download, or version managers
+
+Verify installation:
+
+```bash
+node --version
+```
+
+**🔄 Check-in:** Please run `node --version` and let me know if it works before we continue.
+
+### Step 3B: Install pnpm Package Manager
+
+**Installation Guide:** Follow the official pnpm installation guide
+
+**Quick hints by platform:**
+
+- **Windows:** PowerShell script or `npm install -g pnpm`
+- **macOS:** `brew install pnpm` or curl script
+- **Linux:** curl script or `npm install -g pnpm`
+
+Verify installation:
+
+```bash
+pnpm --version
+```
+
+**🔄 Check-in:** Please run `pnpm --version` and let me know if the installation completes successfully.
+
+### Step 4B: Install Git
+
+**Installation Guide:** Follow the official Git installation documentation
+
+**Quick hints by platform:**
+
+- **macOS:** Homebrew, Xcode Command Line Tools, or direct download
+- **Windows:** Git for Windows, package managers, or direct download
+- **Linux:** Distribution package manager or direct download
+
+Verify installation:
+
+```bash
+git --version
+```
+
+**🔄 Check-in:** Please run `git --version` and verify it works before we continue.
+
+### Step 5B: Create New Project
 
 ```bash
 npx create-next-app@latest YOUR-PROJECT-NAME --typescript --tailwind --eslint
@@ -120,7 +174,7 @@ cd YOUR-PROJECT-NAME
 
 **🔄 Check-in:** Verify the project creation completed successfully.
 
-### Step 3B: Install AI SDK
+### Step 6B: Install AI SDK
 
 Install the AI SDK and OpenAI provider:
 
@@ -130,7 +184,7 @@ pnpm install ai @ai-sdk/openai
 
 **🔄 Check-in:** Run this command and verify the installation completes successfully.
 
-### Step 4B: Create Chat API Route
+### Step 7B: Create Chat API Route
 
 Create an API route file at `app/api/chat/route.ts`:
 
@@ -162,7 +216,7 @@ export async function POST(req: Request) {
 }
 ```
 
-### Step 5B: Install Shadcn UI components
+### Step 8B: Install Shadcn UI components
 
 Run the following in the root directory of your project:
 
@@ -170,13 +224,13 @@ Run the following in the root directory of your project:
 pnpm dlx shadcn@latest init
 ```
 
-### Step 6B: Add the `card` and `button` components from Shadcn to your project
+### Step 9B: Add the `card` and `button` components from Shadcn to your project
 
 ```bash
 pnpm dlx shadcn@latest add button card
 ```
 
-### Step 7B: Create a Poem Card component
+### Step 10B: Create a Poem Card component
 
 Create a file, `components/poem-card.tsx`:
 
@@ -291,7 +345,7 @@ export default function PoemCard() {
 }
 ```
 
-### Step 8B: Modify the root page
+### Step 11B: Modify the root page
 
 Open the root page, `app/page.tsx` and modify it to be like below:
 
@@ -307,11 +361,11 @@ export default function Home() {
 }
 ```
 
-### Step 9B: Obtain your OpenAI API key
+### Step 12B: Obtain your OpenAI API key
 
 Go to https://openai.com/api/ and get your API key. Put $5 on your account so you're not rate-limited.
 
-### Step 10B: Create a .env.local file to store the API key
+### Step 13B: Create a .env.local file to store the API key
 
 Create a `.env.local` file in your project root:
 
