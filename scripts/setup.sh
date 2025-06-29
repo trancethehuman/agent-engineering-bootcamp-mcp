@@ -2,6 +2,19 @@
 
 echo "🚀 Setting up MCP Next.js development environment..."
 
+# Install dependencies first
+echo "📦 Installing dependencies..."
+if command -v pnpm &> /dev/null; then
+    pnpm install
+elif command -v npm &> /dev/null; then
+    npm install
+else
+    echo "❌ Neither pnpm nor npm found. Please install Node.js and a package manager."
+    exit 1
+fi
+echo "✅ Dependencies installed successfully"
+echo ""
+
 # Check for Upstash Redis configuration
 if [ -f .env.local ] && grep -q "UPSTASH_REDIS_REST_URL" .env.local && grep -q "UPSTASH_REDIS_REST_TOKEN" .env.local; then
     echo "✅ Upstash Redis already configured!"
@@ -98,6 +111,9 @@ echo ""
 echo "🐳 Redis Management:"
 echo "   • Stop Redis: 'docker stop redis-mcp'"
 echo "   • Remove Redis: 'docker rm redis-mcp'"
+echo ""
+echo "🤖 To connect to Claude Desktop, add this to your config:"
+echo "   {\"mcpServers\":{\"agent-bootcamp\":{\"command\":\"npx\",\"args\":[\"-y\",\"mcp-remote\",\"http://localhost:3000/mcp\"]}}}"
 echo ""
 echo "☁️  To switch to Upstash Redis later:"
 echo "   1. Run: vercel link"
