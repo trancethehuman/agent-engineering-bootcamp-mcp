@@ -10,6 +10,7 @@
     "test:sse": "node scripts/test-client.mjs http://localhost:3000",
     "test:http": "node scripts/test-streamable-http-client.mjs http://localhost:3000",
     "test:bootcamp": "node scripts/test-bootcamp-tool.mjs http://localhost:3000",
+    "test:stdio": "npx -y mcp-remote http://localhost:3000/mcp",
     "generate:cursor-link": "node scripts/generate-cursor-deeplink.mjs"
   },
   "dependencies": {

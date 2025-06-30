@@ -50,6 +50,8 @@ If you want to clone this repository and develop/test the MCP server locally:
    pnpm run setup
    ```
 
+   The setup script will automatically install dependencies and configure your development environment.
+
 2. **Generate your local Cursor deeplink:**
 
    ```sh
@@ -86,10 +88,11 @@ pnpm run setup
 
 This script will:
 
+- Install project dependencies (using pnpm or npm)
 - Check for Docker installation
 - Start a Redis container for SSE transport
 - Create/update `.env.local` with Redis configuration
-- Provide next steps for testing
+- Start the development server
 
 ### Manual Setup
 
@@ -237,17 +240,16 @@ You can test this MCP server with Claude Desktop to use the agent bootcamp setup
    {
      "mcpServers": {
        "agent-bootcamp": {
-         "command": "node",
+         "command": "npx",
          "args": [
-           "/ABSOLUTE/PATH/TO/YOUR/PROJECT/scripts/test-streamable-http-client.mjs",
-           "http://localhost:3000"
+           "-y",
+           "mcp-remote",
+           "http://localhost:3000/mcp"
          ]
        }
      }
    }
    ```
-
-   **Important:** Replace `/ABSOLUTE/PATH/TO/YOUR/PROJECT` with the actual absolute path to your project directory.
 
 4. **Restart Claude Desktop** completely to pick up the new configuration.
 
@@ -293,6 +295,9 @@ pnpm test:sse
 # Test HTTP transport (no Redis required)
 pnpm test:http
 
+# Test stdio transport (same as Claude Desktop uses)
+pnpm test:stdio
+
 # Test agent bootcamp tool
 pnpm test:bootcamp
 ```
@@ -302,6 +307,7 @@ Or use the full commands:
 ```sh
 node scripts/test-client.mjs http://localhost:3000
 node scripts/test-streamable-http-client.mjs http://localhost:3000
+npx -y mcp-remote http://localhost:3000/mcp
 node scripts/test-bootcamp-tool.mjs http://localhost:3000
 ```
 
@@ -318,7 +324,7 @@ docker start redis-mcp
 docker rm redis-mcp
 ```
 
-**Uses `@vercel/mcp-adapter`**
+**Uses [`@vercel/mcp-adapter`](https://www.npmjs.com/package/@vercel/mcp-adapter)**
 
 ## Usage
 
@@ -356,8 +362,7 @@ This Agent Engineering Bootcamp MCP server includes:
 
 ### Claude Desktop
 
-Add to your Claude Desktop configuration file:
-
+**For deployed server:**
 ```json
 {
   "mcpServers": {
@@ -365,8 +370,24 @@ Add to your Claude Desktop configuration file:
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-everything",
+        "mcp-remote",
         "https://agent-engineering-bootcamp-mcp.vercel.app/mcp"
+      ]
+    }
+  }
+}
+```
+
+**For local development:**
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote", 
+        "http://localhost:3000/mcp"
       ]
     }
   }
@@ -375,6 +396,7 @@ Add to your Claude Desktop configuration file:
 
 ### Cursor
 
+**For deployed server:**
 For Cursor 0.48.0 or later, use direct SSE connection:
 
 ```json
@@ -396,8 +418,38 @@ For older versions, use the proxy approach:
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-everything",
+        "mcp-remote",
         "https://agent-engineering-bootcamp-mcp.vercel.app/mcp"
+      ]
+    }
+  }
+}
+```
+
+**For local development:**
+For Cursor 0.48.0 or later, use direct SSE connection:
+
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "url": "http://localhost:3000/sse"
+    }
+  }
+}
+```
+
+For older versions, use the proxy approach:
+
+```json
+{
+  "mcpServers": {
+    "agent-bootcamp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://localhost:3000/mcp"
       ]
     }
   }
