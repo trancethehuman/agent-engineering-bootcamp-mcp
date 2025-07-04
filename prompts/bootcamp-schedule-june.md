@@ -1,6 +1,7 @@
 # Bootcamp Schedule - June/July 2025
 
 ## June 12, 2025 (Thursday)
+*Event Type: Lecture*
 
 **📅 Launch Day: Welcome & Orientation**
 
@@ -18,6 +19,7 @@ By the end of Day 1, you'll:
 This is where the journey begins !
 
 ## June 13, 2025 (Friday)
+*Event Type: Lecture*
 
 **The Landscape of Agent Engineering + Setting Up Your First Agent!**
 
@@ -33,6 +35,7 @@ We’ll cover:
   → _Python:_ Streamlit, LiteLLM, OpenAI Agents SDK
 
 ## June 16, 2025 (Monday)
+*Event Type: Lecture*
 
 During this lecture, we will explore the fundamentals of AI development and its practical applications.
 
@@ -45,6 +48,7 @@ Key topics include:
 We'll discuss current industry trends and explore popular technology stacks for Agentic development
 
 ## June 17, 2025 (Tuesday)
+*Event Type: Live Coding Session*
 
 🧑‍💻 Daily **Live Coding Session**
 
@@ -60,6 +64,7 @@ Watch and code along!
 So you can 10x your learning.
 
 ## June 18, 2025 (Wednesday)
+*Event Type: Lecture*
 
 **📘 Day 2: How Agents Actually Work: Tool Use, Autonomy & Frameworks**
 
@@ -86,12 +91,10 @@ Now that you’ve setup your developer enviornment, it’s time to dive deeper i
   - Ship a very small agent in your preferred tech stack
 
 ## June 19, 2025 (Thursday)
-
-Live coding
+*Event Type: Live Coding Session*
 
 ## June 20, 2025 (Friday)
-
-Live coding
+*Event Type: Live Coding Session*
 
 **Live Support & Unblocking**
 
@@ -107,6 +110,7 @@ Bring your questions, blockers, and half-working code, we’ll walk through it t
 This is your space to ask _anything_ — technical, strategic, or career-related. Let’s keep the momentum going.
 
 ## June 23, 2025 (Monday)
+*Event Type: Lecture*
 
 **📘 Lesson 3**
 
@@ -136,18 +140,16 @@ Today, we explore how agents can interact with 3rd party APIs, search engines, a
     Pick one. Make it work.
 
 ## June 24, 2025 (Tuesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## June 25, 2025 (Wednesday)
-
-Q&A Office Hour
+*Event Type: Q&A*
 
 ## June 26, 2025 (Thursday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## June 27, 2025 (Friday)
+*Event Type: Lecture*
 
 📚 **RAG Fundamentals:**
 
@@ -172,6 +174,7 @@ In this session, we’ll break down what RAG really is, how it works, and why it
   → How to evaluate RAG quality and avoid common pitfalls
 
 ## June 30, 2025 (Monday)
+*Event Type: Demo Day*
 
 **📣 Monday Demo Day: Show What You Built**
 
@@ -191,25 +194,19 @@ Only best projects will have a chance to present on Mondays!
 So do your best to impress.
 
 ## July 1, 2025 (Tuesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 2, 2025 (Wednesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 3, 2025 (Thursday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 4, 2025 (Friday)
-
-Live Coding
-Q&A - Office Hour
+*Event Type: Live Coding Session and Q&A*
 
 ## July 7, 2025 (Monday)
-
-Live Coding
+*Event Type: Live Coding Session and Demo Day*
 
 After a weekend of building, it’s time to ship.
 
@@ -227,46 +224,34 @@ Only best projects will have a chance to present on Mondays!
 So do your best to impress.
 
 ## July 8, 2025 (Tuesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 9, 2025 (Wednesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 10, 2025 (Thursday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 11, 2025 (Friday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 14, 2025 (Monday)
-
-Demo Day
+*Event Type: Demo Day*
 
 ## July 15, 2025 (Tuesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 16, 2025 (Wednesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 17, 2025 (Thursday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 18, 2025 (Friday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 21, 2025 (Monday)
-
-Live Coding
-
-Demo Day
+*Event Type: Live Coding Session and Demo Day and Lecture*
 
 💼 **LinkedIn Mastery with Meri Nova**
 
@@ -290,14 +275,13 @@ This is the missing skill most engineers overlook.
 Don't just build great things. Learn how to talk about them in a way that opens doors.
 
 ## July 22, 2025 (Tuesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 23, 2025 (Wednesday)
-
-Live Coding
+*Event Type: Live Coding Session*
 
 ## July 24, 2025 (Thursday)
+*Event Type: Graduation Ceremony*
 
 🎓 **Graduation Ceremony**
 
