@@ -46,7 +46,6 @@ If you want to clone this repository and develop/test the MCP server locally:
    ```sh
    git clone https://github.com/trancethehuman/agent-engineering-bootcamp-mcp.git
    cd agent-engineering-bootcamp-mcp
-   pnpm install
    pnpm run setup
    ```
 
@@ -82,7 +81,6 @@ Replace `/ABSOLUTE/PATH/TO/YOUR/PROJECT` with your actual project path.
 Run the automated setup script to install dependencies and configure Redis:
 
 ```sh
-pnpm install
 pnpm run setup
 ```
 
