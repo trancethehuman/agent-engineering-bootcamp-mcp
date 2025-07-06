@@ -1,0 +1,645 @@
+{
+  "pages": [
+    {
+      "number": 1,
+      "text": [
+        {
+          "content": "MCP for busy",
+          "x": 100,
+          "y": 618
+        },
+        {
+          "content": "professionals",
+          "x": 100,
+          "y": 450
+        },
+        {
+          "content": "Hai",
+          "x": 100,
+          "y": 341
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 2,
+      "text": [
+        {
+          "content": "What’s on the menu today?",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "'5 MCP explaine-",
+          "x": 1072.373187,
+          "y": 639
+        },
+        {
+          "content": "\u001a5 Use case\u001c",
+          "x": 1072.373187,
+          "y": 546
+        },
+        {
+          "content": "$5 Build effective MCP server\u001c",
+          "x": 1072.373187,
+          "y": 453
+        },
+        {
+          "content": "\u00135 Recommended Stac",
+          "x": 1072.373187,
+          "y": 360
+        },
+        {
+          "content": "\u00175 Homework",
+          "x": 1072.373187,
+          "y": 267
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 3,
+      "text": [
+        {
+          "content": "Agents use tools.",
+          "x": 730.232758,
+          "y": 515
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 4,
+      "text": [
+        {
+          "content": "Agent 2",
+          "x": 1002.53125,
+          "y": 471
+        },
+        {
+          "content": "Agent 3",
+          "x": 1002.53125,
+          "y": 231
+        },
+        {
+          "content": "(get_resource_1, update_resource_1, etc..)",
+          "x": 164,
+          "y": 660
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 5,
+      "text": [
+        {
+          "content": "Why not just hit API endpoints?",
+          "x": 539.713745,
+          "y": 515
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 6,
+      "text": [
+        {
+          "content": "Agents must process everything in an API unlike",
+          "x": 312.681763,
+          "y": 640
+        },
+        {
+          "content": "humans who can ignore irrelevant parameters,",
+          "x": 333.007263,
+          "y": 557
+        },
+        {
+          "content": "making traditional REST APIs cognitively",
+          "x": 416.847473,
+          "y": 474
+        },
+        {
+          "content": "expensive and inefficient for AI consumption",
+          "x": 359.990723,
+          "y": 391
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 7,
+      "text": [
+        {
+          "content": "“It all ties back to Context Management!” - Hai",
+          "x": 336.47772199999997,
+          "y": 515
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 8,
+      "text": [
+        {
+          "content": "Agents use tools. MCP servers provide them",
+          "x": 369.536743,
+          "y": 557
+        },
+        {
+          "content": "amongsts other things",
+          "x": 658.4862370000001,
+          "y": 474
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 9,
+      "text": [
+        {
+          "content": "MCP Client 1",
+          "x": 1082.4375,
+          "y": 549
+        },
+        {
+          "content": "MCP Server 1",
+          "x": 1541.703125,
+          "y": 545
+        },
+        {
+          "content": "MCP Server 2",
+          "x": 1541.703125,
+          "y": 422
+        },
+        {
+          "content": "MCP Server 3",
+          "x": 1541.703125,
+          "y": 299
+        },
+        {
+          "content": "MCP Client 2",
+          "x": 1082.4375,
+          "y": 426
+        },
+        {
+          "content": "MCP Client 3",
+          "x": 1082.4375,
+          "y": 303
+        },
+        {
+          "content": "Host Application",
+          "x": 705.210938,
+          "y": 673.49762
+        },
+        {
+          "content": "Agent",
+          "x": 778.40625,
+          "y": 426
+        },
+        {
+          "content": "User",
+          "x": 263.703125,
+          "y": 426
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 10,
+      "text": [
+        {
+          "content": "A common misconception: apps like Cursor is",
+          "x": 348.865723,
+          "y": 557
+        },
+        {
+          "content": "“Host”, not “Client”.",
+          "x": 695.4549870000001,
+          "y": 474
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 11,
+      "text": [
+        {
+          "content": "What can MCP servers",
+          "x": 100,
+          "y": 557
+        },
+        {
+          "content": "provide your agent with?",
+          "x": 100,
+          "y": 474
+        },
+        {
+          "content": "#) Tool,",
+          "x": 1072.373187,
+          "y": 617
+        },
+        {
+          "content": "() Resources (RAG\u001c",
+          "x": 1072.373187,
+          "y": 524
+        },
+        {
+          "content": "\u001a) Prompts",
+          "x": 1072.373187,
+          "y": 431
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 12,
+      "text": [
+        {
+          "content": "/7 Equip your agent / agentic workflow",
+          "x": 1072.373187,
+          "y": 678
+        },
+        {
+          "content": "with more tools without wasting dev",
+          "x": 1123,
+          "y": 625
+        },
+        {
+          "content": "tim%",
+          "x": 1123,
+          "y": 572
+        },
+        {
+          "content": "\u00197 Tap into retrieval systems that your",
+          "x": 1072.373187,
+          "y": 479
+        },
+        {
+          "content": "agent doesn’t know about ye\u001f",
+          "x": 1123,
+          "y": 426
+        },
+        {
+          "content": "+7 Agent-to-agent communication (not",
+          "x": 1072.373187,
+          "y": 333
+        },
+        {
+          "content": "yet)",
+          "x": 1123,
+          "y": 280
+        },
+        {
+          "content": "/7 Expose your API endpoints (badN",
+          "x": 112.373187,
+          "y": 678
+        },
+        {
+          "content": "\u00197 Expose LLM workflows (goodN",
+          "x": 112.373187,
+          "y": 585
+        },
+        {
+          "content": "+7 Expose RAG resourceI",
+          "x": 112.373187,
+          "y": 492
+        },
+        {
+          "content": "^7 Expose prompts (never seen an",
+          "x": 112.373187,
+          "y": 399
+        },
+        {
+          "content": "implementation",
+          "x": 163,
+          "y": 346
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 13,
+      "text": [
+        {
+          "content": "Where can MCP servers be?",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "\u001d+ Local (stdin/stdout\u0019",
+          "x": 1072.373187,
+          "y": 571
+        },
+        {
+          "content": "\u0017+ Remote (SSE / StreamableHTTP)",
+          "x": 1072.373187,
+          "y": 478
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 14,
+      "text": [
+        {
+          "content": "Exciting update: Elicitation!",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "01 New protoco&",
+          "x": 1072.373187,
+          "y": 664
+        },
+        {
+          "content": "1 Server can ask client for inpu\"",
+          "x": 1097.573187,
+          "y": 571
+        },
+        {
+          "content": ")1 Great for human in the loo'",
+          "x": 1072.373187,
+          "y": 478
+        },
+        {
+          "content": "\u00141 Enables complex workflows",
+          "x": 1072.373187,
+          "y": 385
+        },
+        {
+          "content": "Read more:",
+          "x": 100,
+          "y": 248
+        },
+        {
+          "content": "f Introducing MCP elicitation: Request user",
+          "x": 117.65625,
+          "y": 208
+        },
+        {
+          "content": "input at runtime (WorkOS7",
+          "x": 148,
+          "y": 168
+        }
+      ],
+      "links": [
+        {
+          "text": "https://workos.com/blog/mcp-elicitation",
+          "url": "https://workos.com/blog/mcp-elicitation",
+          "x": 148,
+          "y": 199.199951
+        },
+        {
+          "text": "https://workos.com/blog/mcp-elicitation",
+          "url": "https://workos.com/blog/mcp-elicitation",
+          "x": 148,
+          "y": 159.199951
+        },
+        {
+          "text": "https://modelcontextprotocol.io/specification/draft/client/elicitation",
+          "url": "https://modelcontextprotocol.io/specification/draft/client/elicitation",
+          "x": 148,
+          "y": 79.199951
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "text": [
+        {
+          "content": "Workflows, not API endpoints",
+          "x": 1132,
+          "y": 617.5
+        },
+        {
+          "content": "Don’t be too granular",
+          "x": 1132,
+          "y": 524.5
+        },
+        {
+          "content": "(Optional) Make SQL tools",
+          "x": 1132,
+          "y": 431.5
+        },
+        {
+          "content": "Lessons learned building",
+          "x": 100,
+          "y": 596
+        },
+        {
+          "content": "MCP servers",
+          "x": 100,
+          "y": 513
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 16,
+      "text": [
+        {
+          "content": "For building server\u001b",
+          "x": 127,
+          "y": 645.9999690000001
+        },
+        {
+          "content": "C Vercel’s MCP Adapter",
+          "x": 144.65625,
+          "y": 597.9999690000001
+        },
+        {
+          "content": "For building server\u001b",
+          "x": 1100,
+          "y": 645.999969
+        },
+        {
+          "content": "C FastMCP",
+          "x": 1117.65625,
+          "y": 597.999969
+        }
+      ],
+      "links": [
+        {
+          "text": "https://ai-sdk.dev/cookbook/node/mcp-tools",
+          "url": "https://ai-sdk.dev/cookbook/node/mcp-tools",
+          "x": 175,
+          "y": 781.200012
+        },
+        {
+          "text": "https://github.com/openai/openai-agents-js/tree/main/examples/mcp",
+          "url": "https://github.com/openai/openai-agents-js/tree/main/examples/mcp",
+          "x": 175,
+          "y": 733.200012
+        },
+        {
+          "text": "https://vercel.com/docs/mcp",
+          "url": "https://vercel.com/docs/mcp",
+          "x": 175,
+          "y": 589.200012
+        },
+        {
+          "text": "https://gofastmcp.com/clients/client",
+          "url": "https://gofastmcp.com/clients/client",
+          "x": 1148,
+          "y": 781.200012
+        },
+        {
+          "text": "https://github.com/openai/openai-agents-python/tree/main/examples/mcp",
+          "url": "https://github.com/openai/openai-agents-python/tree/main/examples/mcp",
+          "x": 1148,
+          "y": 733.200012
+        },
+        {
+          "text": "https://github.com/jlowin/fastmcp",
+          "url": "https://github.com/jlowin/fastmcp",
+          "x": 1148,
+          "y": 589.200012
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "text": [
+        {
+          "content": "Agent Engineering Bootcamp MCP",
+          "x": 1028,
+          "y": 597
+        },
+        {
+          "content": "Server (Hai)",
+          "x": 1028,
+          "y": 544
+        },
+        {
+          "content": "Build an MCP server in Python using",
+          "x": 1028,
+          "y": 433
+        },
+        {
+          "content": "FastMCP (FastMCP)",
+          "x": 1028,
+          "y": 380
+        },
+        {
+          "content": "Block’s playbook for designing MCP",
+          "x": 1028,
+          "y": 269
+        },
+        {
+          "content": "servers (Block)",
+          "x": 1028,
+          "y": 216
+        },
+        {
+          "content": "MCP Server registry (Smithery)",
+          "x": 1028,
+          "y": 105
+        },
+        {
+          "content": "Additional resources to read",
+          "x": 100,
+          "y": 554.5
+        }
+      ],
+      "links": [
+        {
+          "text": "https://ai-sdk.dev/cookbook/node/mcp-tools",
+          "url": "https://ai-sdk.dev/cookbook/node/mcp-tools",
+          "x": 1028,
+          "y": 924.200012
+        },
+        {
+          "text": "https://vercel.com/docs/mcp",
+          "url": "https://vercel.com/docs/mcp",
+          "x": 1028,
+          "y": 810.200012
+        },
+        {
+          "text": "https://vercel.com/templates/next.js/model-context-protocol-mcp-with-next-js",
+          "url": "https://vercel.com/templates/next.js/model-context-protocol-mcp-with-next-js",
+          "x": 1028,
+          "y": 696.200012
+        },
+        {
+          "text": "https://github.com/trancethehuman/agent-engineering-bootcamp-mcp",
+          "url": "https://github.com/trancethehuman/agent-engineering-bootcamp-mcp",
+          "x": 1028,
+          "y": 585.200012
+        },
+        {
+          "text": "https://github.com/trancethehuman/agent-engineering-bootcamp-mcp",
+          "url": "https://github.com/trancethehuman/agent-engineering-bootcamp-mcp",
+          "x": 1028,
+          "y": 532.200012
+        },
+        {
+          "text": "https://gofastmcp.com/getting-started/welcome",
+          "url": "https://gofastmcp.com/getting-started/welcome",
+          "x": 1028,
+          "y": 421.200012
+        },
+        {
+          "text": "https://gofastmcp.com/getting-started/welcome",
+          "url": "https://gofastmcp.com/getting-started/welcome",
+          "x": 1028,
+          "y": 368.200012
+        },
+        {
+          "text": "https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers",
+          "url": "https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers",
+          "x": 1028,
+          "y": 257.199951
+        },
+        {
+          "text": "https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers",
+          "url": "https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers",
+          "x": 1028,
+          "y": 204.199951
+        },
+        {
+          "text": "https://smithery.ai/",
+          "url": "https://smithery.ai/",
+          "x": 1028,
+          "y": 93.199951
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "text": [
+        {
+          "content": "Homework this week",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "(* Add an MCP server of your choice to",
+          "x": 1072.373187,
+          "y": 597
+        },
+        {
+          "content": "your agent’s toolki\u0015",
+          "x": 1123,
+          "y": 544
+        },
+        {
+          "content": "\u000e* (Bonus) Build an MCP server",
+          "x": 1072.373187,
+          "y": 451
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 19,
+      "text": [
+        {
+          "content": "Q&A",
+          "x": 850.179688,
+          "y": 499
+        }
+      ],
+      "links": []
+    }
+  ]
+}

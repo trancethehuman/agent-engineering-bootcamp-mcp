@@ -1,0 +1,514 @@
+{
+  "pages": [
+    {
+      "number": 1,
+      "text": [
+        {
+          "content": "Your first agent",
+          "x": 100,
+          "y": 534
+        },
+        {
+          "content": "Hai",
+          "x": 100,
+          "y": 425
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 2,
+      "text": [
+        {
+          "content": "What’s on the menu today?",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "#\u001d Tool Us(",
+          "x": 1072.373187,
+          "y": 639
+        },
+        {
+          "content": "/\u001d Context Managemen2",
+          "x": 1072.373187,
+          "y": 546
+        },
+        {
+          "content": "\u0016\u001d Multi vs Sequential Agent+",
+          "x": 1072.373187,
+          "y": 453
+        },
+        {
+          "content": ".\u001d Recommended Stac3",
+          "x": 1072.373187,
+          "y": 360
+        },
+        {
+          "content": "\u0011\u001d Homework",
+          "x": 1072.373187,
+          "y": 267
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 3,
+      "text": [
+        {
+          "content": "LLM agents observe their current state (including",
+          "x": 369,
+          "y": 693
+        },
+        {
+          "content": "environmental input and chat history), think through the",
+          "x": 369,
+          "y": 616
+        },
+        {
+          "content": "best action using internal reasoning or explicit thinking",
+          "x": 369,
+          "y": 539
+        },
+        {
+          "content": "processes to implement their strategy, and then act by",
+          "x": 369,
+          "y": 462
+        },
+        {
+          "content": "generating text, calling tools, or executing commands.",
+          "x": 369,
+          "y": 385
+        },
+        {
+          "content": "—Hai (me obviously)",
+          "x": 369,
+          "y": 306
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 4,
+      "text": [
+        {
+          "content": "LLM\n",
+          "x": 959.984375,
+          "y": 576
+        },
+        {
+          "content": "“You have access to",
+          "x": 845.734375,
+          "y": 528
+        },
+        {
+          "content": "these tools. Use them.”",
+          "x": 822.015625,
+          "y": 480
+        },
+        {
+          "content": "“I need a report written”",
+          "x": 181.5625,
+          "y": 532
+        },
+        {
+          "content": "write_data",
+          "x": 1464.505125,
+          "y": 590
+        },
+        {
+          "content": "plan_next_steps",
+          "x": 1420.802,
+          "y": 466
+        },
+        {
+          "content": "search_web",
+          "x": 1453.536375,
+          "y": 342
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 5,
+      "text": [
+        {
+          "content": "Context Mgnt. is the most",
+          "x": 100,
+          "y": 637.5
+        },
+        {
+          "content": "important job of agent",
+          "x": 100,
+          "y": 554.5
+        },
+        {
+          "content": "engineering",
+          "x": 100,
+          "y": 471.5
+        },
+        {
+          "content": "“Prompt engineering” was coined as a term for",
+          "x": 1060,
+          "y": 630.5
+        },
+        {
+          "content": "the effort needing to write your task in the ideal",
+          "x": 1060,
+          "y": 572.5
+        },
+        {
+          "content": "format for a LLM chatbot. “Context engineering”",
+          "x": 1060,
+          "y": 514.5
+        },
+        {
+          "content": "is the next level of this.",
+          "x": 1060,
+          "y": 456.5
+        },
+        {
+          "content": "— Walden Yan @ cognition",
+          "x": 1060,
+          "y": 382.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 6,
+      "text": [
+        {
+          "content": "Multi-agent systems that primarily “read” are easier",
+          "x": 369,
+          "y": 577.5
+        },
+        {
+          "content": "than those that “write”.",
+          "x": 369,
+          "y": 500.49999999999994
+        },
+        {
+          "content": "—Harrison Chase, CEO @ Langchain",
+          "x": 369,
+          "y": 421.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 7,
+      "text": [
+        {
+          "content": ";8 Scalabilit1",
+          "x": 1072.373187,
+          "y": 678
+        },
+        {
+          "content": "!8 Faster executio#",
+          "x": 1072.373187,
+          "y": 585
+        },
+        {
+          "content": "(8 Better for read-heavy tasks",
+          "x": 1072.373187,
+          "y": 492
+        },
+        {
+          "content": ";8 Easier context managemenJ",
+          "x": 112.373187,
+          "y": 678
+        },
+        {
+          "content": "!8 Easier debugginB",
+          "x": 112.373187,
+          "y": 585
+        },
+        {
+          "content": "(8 Easier for write-heavy tasks",
+          "x": 112.373187,
+          "y": 492
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 8,
+      "text": [
+        {
+          "content": "Parallel Research",
+          "x": 1132,
+          "y": 617.5
+        },
+        {
+          "content": "Synthesize Results",
+          "x": 1132,
+          "y": 524.5
+        },
+        {
+          "content": "Auto-Citation",
+          "x": 1132,
+          "y": 431.5
+        },
+        {
+          "content": "Deliver Report",
+          "x": 1132,
+          "y": 338.5
+        },
+        {
+          "content": "Multi-agent researcher",
+          "x": 100,
+          "y": 626.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 9,
+      "text": [],
+      "links": []
+    },
+    {
+      "number": 10,
+      "text": [
+        {
+          "content": "For Advanced DevelopersM",
+          "x": 171,
+          "y": 634
+        },
+        {
+          "content": "\u0019 LangGraph (TS)\n\n",
+          "x": 188.65625,
+          "y": 586
+        },
+        {
+          "content": "For multi-agentM",
+          "x": 171,
+          "y": 490
+        },
+        {
+          "content": "B OpenAI Agents SDK (TS;",
+          "x": 188.125,
+          "y": 442
+        },
+        {
+          "content": "B Mastra",
+          "x": 188.125,
+          "y": 394
+        },
+        {
+          "content": "For Advanced DevelopersM",
+          "x": 1142,
+          "y": 682
+        },
+        {
+          "content": "\u0019 LangGraph (Python)\n\n",
+          "x": 1159.65625,
+          "y": 634
+        },
+        {
+          "content": "For multi-agentM",
+          "x": 1142,
+          "y": 538
+        },
+        {
+          "content": "\u0019 OpenAI Agents SDK (python)",
+          "x": 1159.65625,
+          "y": 490
+        }
+      ],
+      "links": [
+        {
+          "text": "https://openai.github.io/openai-agents-js/",
+          "url": "https://openai.github.io/openai-agents-js/",
+          "x": 219,
+          "y": 769.200012
+        },
+        {
+          "text": "https://ai-sdk.dev/docs/foundations/agents#agents",
+          "url": "https://ai-sdk.dev/docs/foundations/agents#agents",
+          "x": 219,
+          "y": 577.200012
+        },
+        {
+          "text": "https://openai.github.io/openai-agents-js/",
+          "url": "https://openai.github.io/openai-agents-js/",
+          "x": 219,
+          "y": 433.199951
+        },
+        {
+          "text": "https://mastra.ai/",
+          "url": "https://mastra.ai/",
+          "x": 219,
+          "y": 385.199951
+        },
+        {
+          "text": "https://openai.github.io/openai-agents-python/",
+          "url": "https://openai.github.io/openai-agents-python/",
+          "x": 1190,
+          "y": 769.200012
+        },
+        {
+          "text": "https://openai.github.io/openai-agents-python/",
+          "url": "https://openai.github.io/openai-agents-python/",
+          "x": 1190,
+          "y": 481.199951
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "text": [
+        {
+          "content": "(Anthropic)",
+          "x": 1023,
+          "y": 673
+        },
+        {
+          "content": "How we built our multi-agent",
+          "x": 1023,
+          "y": 578
+        },
+        {
+          "content": "research system (Anthropic)",
+          "x": 1023,
+          "y": 525
+        },
+        {
+          "content": "Example multi-agent prompts",
+          "x": 1023,
+          "y": 430
+        },
+        {
+          "content": "(Anthropic)",
+          "x": 1023,
+          "y": 377
+        },
+        {
+          "content": "Don’t Build Multi-Agents (Walden",
+          "x": 1023,
+          "y": 282
+        },
+        {
+          "content": "Yang - Cognition)",
+          "x": 1023,
+          "y": 229
+        },
+        {
+          "content": "Sample Project: OpenAI Agents SDK with",
+          "x": 1023,
+          "y": 134
+        },
+        {
+          "content": "Additional resources to read",
+          "x": 100,
+          "y": 554.5
+        }
+      ],
+      "links": [
+        {
+          "text": "https://github.com/humanlayer/12-factor-agents",
+          "url": "https://github.com/humanlayer/12-factor-agents",
+          "x": 1023,
+          "y": 957.200012
+        },
+        {
+          "text": "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems/",
+          "url": "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems/",
+          "x": 1023,
+          "y": 862.200012
+        },
+        {
+          "text": "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems/",
+          "url": "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems/",
+          "x": 1023,
+          "y": 809.200012
+        },
+        {
+          "text": "https://www.anthropic.com/engineering/building-effective-agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents",
+          "x": 1023,
+          "y": 714.200012
+        },
+        {
+          "text": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+          "url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+          "x": 1023,
+          "y": 566.200012
+        },
+        {
+          "text": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+          "url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+          "x": 1023,
+          "y": 513.200012
+        },
+        {
+          "text": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents/prompts",
+          "url": "https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents/prompts",
+          "x": 1023,
+          "y": 418.200012
+        },
+        {
+          "text": "https://cognition.ai/blog/dont-build-multi-agents?ref=blog.langchain.com",
+          "url": "https://cognition.ai/blog/dont-build-multi-agents?ref=blog.langchain.com",
+          "x": 1023,
+          "y": 270.199951
+        },
+        {
+          "text": "https://github.com/openai/openai-cs-agents-demo",
+          "url": "https://github.com/openai/openai-cs-agents-demo",
+          "x": 1023,
+          "y": 122.199951
+        },
+        {
+          "text": "https://github.com/openai/openai-cs-agents-demo",
+          "url": "https://github.com/openai/openai-cs-agents-demo",
+          "x": 1023,
+          "y": 69.199951
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "text": [
+        {
+          "content": "Homework this week",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "\u0018- Build an agent that can do 2 things-",
+          "x": 1072.373187,
+          "y": 624
+        },
+        {
+          "content": "!- One of those things can be to",
+          "x": 1072.373187,
+          "y": 531
+        },
+        {
+          "content": "retrieve documents from your RAG",
+          "x": 1123,
+          "y": 478
+        },
+        {
+          "content": "source (e.g Vectorize)",
+          "x": 1123,
+          "y": 425
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 13,
+      "text": [
+        {
+          "content": "Q&A",
+          "x": 850.179688,
+          "y": 499
+        }
+      ],
+      "links": []
+    }
+  ]
+}
