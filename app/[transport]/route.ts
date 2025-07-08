@@ -41,7 +41,7 @@ const handler = createMcpHandler(
   {
     basePath: "",
     verboseLogs: true,
-    maxDuration: 60,
+    maxDuration: 10,
     ...(isRedisAvailable() && { redisUrl: getRedisUrl() }),
   }
 );
