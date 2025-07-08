@@ -1,0 +1,724 @@
+{
+  "pages": [
+    {
+      "number": 1,
+      "text": [
+        {
+          "content": "Agent Engineering",
+          "x": 100,
+          "y": 618
+        },
+        {
+          "content": "101",
+          "x": 100,
+          "y": 450
+        },
+        {
+          "content": "Hai",
+          "x": 100,
+          "y": 341
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 2,
+      "text": [
+        {
+          "content": "What’s on the menu today?",
+          "x": 100,
+          "y": 515
+        },
+        {
+          "content": "\u001b\u0019 Agents vs Workflow'",
+          "x": 1072.373187,
+          "y": 617
+        },
+        {
+          "content": "\u0013\u0019 Prompt engineerin\u0017",
+          "x": 1072.373187,
+          "y": 524
+        },
+        {
+          "content": ")\u0019 Recommended tech stac\u0015",
+          "x": 1072.373187,
+          "y": 431
+        },
+        {
+          "content": "\u0011\u0019 Who’s hiring whom?",
+          "x": 1072.373187,
+          "y": 338
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 3,
+      "text": [
+        {
+          "content": "Conversational Chat",
+          "x": 1132,
+          "y": 617.5
+        },
+        {
+          "content": "Instruction Following",
+          "x": 1132,
+          "y": 524.5
+        },
+        {
+          "content": "Image Generation / Understanding",
+          "x": 1132,
+          "y": 431.5
+        },
+        {
+          "content": "AI Agent as a Computer Interface",
+          "x": 1132,
+          "y": 338.5
+        },
+        {
+          "content": "We’ve come a long way",
+          "x": 100,
+          "y": 554.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 4,
+      "text": [
+        {
+          "content": "best action using internal reasoning or explicit thinking",
+          "x": 369,
+          "y": 654.5
+        },
+        {
+          "content": "processes to implement their policy strategy, and then",
+          "x": 369,
+          "y": 577.5
+        },
+        {
+          "content": "act by generating text, calling tools, or executing",
+          "x": 369,
+          "y": 500.5
+        },
+        {
+          "content": "commands. This cycle continuously repeats as the",
+          "x": 369,
+          "y": 423.5
+        },
+        {
+          "content": "agent updates its memory and makes new decisions",
+          "x": 369,
+          "y": 346.5
+        },
+        {
+          "content": "based on action outcomes.",
+          "x": 369,
+          "y": 269.5
+        },
+        {
+          "content": "—Hai (me obviously)",
+          "x": 369,
+          "y": 190.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 5,
+      "text": [
+        {
+          "content": "Why agents?",
+          "x": 100,
+          "y": 554.5
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 6,
+      "text": [
+        {
+          "content": "Routing - Classifies inputs and directs to",
+          "x": 1100,
+          "y": 684
+        },
+        {
+          "content": "specialized tasks.\n\n",
+          "x": 1100,
+          "y": 636
+        },
+        {
+          "content": "Parallelization - Multiple LLMs work",
+          "x": 1100,
+          "y": 540
+        },
+        {
+          "content": "simultaneously via sectioning or voting.\n\n",
+          "x": 1100,
+          "y": 492
+        },
+        {
+          "content": "Orchestrator-Workers - Central LLM delegates",
+          "x": 1100,
+          "y": 396
+        },
+        {
+          "content": "tasks to worker LLMs.\n\n",
+          "x": 1100,
+          "y": 348
+        },
+        {
+          "content": "Evaluator-Optimizer - One LLM generates,",
+          "x": 1100,
+          "y": 252
+        },
+        {
+          "content": "another evaluates in feedback loops.",
+          "x": 1100,
+          "y": 204
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 7,
+      "text": [
+        {
+          "content": "\u0018 Simpler to debu\u0017",
+          "x": 1117.65625,
+          "y": 684
+        },
+        {
+          "content": "\u0018 Predictable resource usag)",
+          "x": 1117.65625,
+          "y": 636
+        },
+        {
+          "content": "\u0018 Good for decomposable tasks\n\n",
+          "x": 1117.65625,
+          "y": 588
+        },
+        {
+          "content": "Con/",
+          "x": 1100,
+          "y": 492
+        },
+        {
+          "content": "\u0018 Less flexibl)",
+          "x": 1117.65625,
+          "y": 444
+        },
+        {
+          "content": "\u0018 Fixed execution path,",
+          "x": 1117.65625,
+          "y": 396
+        },
+        {
+          "content": "\u0018 Limited adaptabilit",
+          "x": 1117.65625,
+          "y": 348
+        },
+        {
+          "content": "\u0018 Can't handle unexpected scenarios",
+          "x": 1117.65625,
+          "y": 300
+        },
+        {
+          "content": "\u0018 Handle sophisticated task,",
+          "x": 157.65625,
+          "y": 672
+        },
+        {
+          "content": "\u0018 Good for open-ended problem,",
+          "x": 157.65625,
+          "y": 624
+        },
+        {
+          "content": "\u0018 Autonomous decision-making\n\n",
+          "x": 157.65625,
+          "y": 576
+        },
+        {
+          "content": "Con/",
+          "x": 140,
+          "y": 480
+        },
+        {
+          "content": "\u0018 Higher costs and latenc",
+          "x": 157.65625,
+          "y": 432
+        },
+        {
+          "content": "\u0018 More complex to implemenW",
+          "x": 157.65625,
+          "y": 384
+        },
+        {
+          "content": "\u0018 Potential for compounding error,",
+          "x": 157.65625,
+          "y": 336
+        },
+        {
+          "content": "\u0018 Require extensive testing",
+          "x": 157.65625,
+          "y": 288
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 8,
+      "text": [
+        {
+          "content": "Question for you: when",
+          "x": 401.19921899999997,
+          "y": 629
+        },
+        {
+          "content": "should we build agents vs",
+          "x": 337.601562,
+          "y": 499
+        },
+        {
+          "content": "workflows?",
+          "x": 685.2265620000001,
+          "y": 369
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 9,
+      "text": [
+        {
+          "content": "But even the smartest human won’t be able to do their",
+          "x": 369,
+          "y": 693
+        },
+        {
+          "content": "job effectively without the context of what they’re being",
+          "x": 369,
+          "y": 616
+        },
+        {
+          "content": "asked to do. “Prompt engineering” was coined as a term",
+          "x": 369,
+          "y": 539
+        },
+        {
+          "content": "for the effort needing to write your task in the ideal",
+          "x": 369,
+          "y": 462
+        },
+        {
+          "content": "format for a LLM chatbot. “Context engineering” is the",
+          "x": 369,
+          "y": 385
+        },
+        {
+          "content": "next level of this.",
+          "x": 369,
+          "y": 308
+        },
+        {
+          "content": "—Walden Yan @ cognition",
+          "x": 369,
+          "y": 229
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 10,
+      "text": [
+        {
+          "content": "prompt engineering should be called\n",
+          "x": 466.154755,
+          "y": 557
+        },
+        {
+          "content": "context engineering when talking about agents",
+          "x": 313.476013,
+          "y": 474
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 11,
+      "text": [
+        {
+          "content": "1 shadcn (UI components@",
+          "x": 157.125,
+          "y": 672
+        },
+        {
+          "content": "1 Vercel (Hosting)\n\n",
+          "x": 157.125,
+          "y": 624
+        },
+        {
+          "content": "For most peopl",
+          "x": 140,
+          "y": 528
+        },
+        {
+          "content": "\u001b AI SDK (agent or LLM calls@",
+          "x": 157.65625,
+          "y": 480
+        },
+        {
+          "content": "\u001b OpenAI Agents SDK (TS)\n\n",
+          "x": 157.65625,
+          "y": 432
+        },
+        {
+          "content": "For advanced peoplb",
+          "x": 140,
+          "y": 336
+        },
+        {
+          "content": "\u001b MastrJ",
+          "x": 157.65625,
+          "y": 288
+        },
+        {
+          "content": "\u001b LangGraph (TS@",
+          "x": 157.65625,
+          "y": 240
+        },
+        {
+          "content": "\u001b Figma Make",
+          "x": 157.65625,
+          "y": 192
+        },
+        {
+          "content": "For most peopl",
+          "x": 1092,
+          "y": 624
+        },
+        {
+          "content": "1 LiteLLM / OpenRouteÚ",
+          "x": 1109.125,
+          "y": 576
+        },
+        {
+          "content": "1 OpenAI Agents SDK (python)\n\n",
+          "x": 1109.125,
+          "y": 528
+        },
+        {
+          "content": "For advanced peopl",
+          "x": 1092,
+          "y": 432
+        },
+        {
+          "content": "\u001b LangGraph (python)\n\n",
+          "x": 1109.65625,
+          "y": 384
+        },
+        {
+          "content": "If you want a nice frontenÄ",
+          "x": 1092,
+          "y": 288
+        },
+        {
+          "content": "\u001b FastAPî",
+          "x": 1109.65625,
+          "y": 240
+        },
+        {
+          "content": "\u001b Next.js (just for frontend, no API routes@",
+          "x": 1109.65625,
+          "y": 192
+        },
+        {
+          "content": "\u001b v0",
+          "x": 1109.65625,
+          "y": 144
+        }
+      ],
+      "links": [
+        {
+          "text": "https://nextjs.org/",
+          "url": "https://nextjs.org/",
+          "x": 188,
+          "y": 759.200012
+        },
+        {
+          "text": "https://v0.dev/",
+          "url": "https://v0.dev/",
+          "x": 188,
+          "y": 711.200012
+        },
+        {
+          "text": "https://ui.shadcn.com/",
+          "url": "https://ui.shadcn.com/",
+          "x": 188,
+          "y": 663.200012
+        },
+        {
+          "text": "https://vercel.com/",
+          "url": "https://vercel.com/",
+          "x": 188,
+          "y": 615.200012
+        },
+        {
+          "text": "https://ai-sdk.dev/",
+          "url": "https://ai-sdk.dev/",
+          "x": 188,
+          "y": 471.199951
+        },
+        {
+          "text": "https://openai.github.io/openai-agents-js/",
+          "url": "https://openai.github.io/openai-agents-js/",
+          "x": 188,
+          "y": 423.199951
+        },
+        {
+          "text": "https://mastra.ai/",
+          "url": "https://mastra.ai/",
+          "x": 188,
+          "y": 279.199951
+        },
+        {
+          "text": "https://langchain-ai.github.io/langgraphjs/",
+          "url": "https://langchain-ai.github.io/langgraphjs/",
+          "x": 188,
+          "y": 231.199951
+        },
+        {
+          "text": "https://www.figma.com/make/",
+          "url": "https://www.figma.com/make/",
+          "x": 188,
+          "y": 183.199951
+        },
+        {
+          "text": "https://docs.astral.sh/uv/",
+          "url": "https://docs.astral.sh/uv/",
+          "x": 1140,
+          "y": 759.200012
+        },
+        {
+          "text": "https://streamlit.io/",
+          "url": "https://streamlit.io/",
+          "x": 1140,
+          "y": 711.200012
+        },
+        {
+          "text": "https://www.litellm.ai/",
+          "url": "https://www.litellm.ai/",
+          "x": 1140,
+          "y": 567.200012
+        },
+        {
+          "text": "https://openai.github.io/openai-agents-python/",
+          "url": "https://openai.github.io/openai-agents-python/",
+          "x": 1140,
+          "y": 519.199951
+        },
+        {
+          "text": "https://langchain-ai.github.io/langgraph/",
+          "url": "https://langchain-ai.github.io/langgraph/",
+          "x": 1140,
+          "y": 375.199951
+        },
+        {
+          "text": "https://fastapi.tiangolo.com/",
+          "url": "https://fastapi.tiangolo.com/",
+          "x": 1140,
+          "y": 231.199951
+        },
+        {
+          "text": "https://nextjs.org/",
+          "url": "https://nextjs.org/",
+          "x": 1140,
+          "y": 183.199951
+        },
+        {
+          "text": "https://v0.dev/",
+          "url": "https://v0.dev/",
+          "x": 1140,
+          "y": 135.199951
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "text": [
+        {
+          "content": "SaaS agent startups want",
+          "x": 100,
+          "y": 620
+        },
+        {
+          "content": "product engineers.",
+          "x": 100,
+          "y": 537
+        }
+      ],
+      "links": []
+    },
+    {
+      "number": 13,
+      "text": [
+        {
+          "content": "AI Engineer World’s Fair 2025 opening",
+          "x": 1022,
+          "y": 617.5
+        },
+        {
+          "content": "OpenAI defines agents (AI Eng. WF ‘25)",
+          "x": 1022,
+          "y": 524.5
+        },
+        {
+          "content": "NY to track AI-related layoffs",
+          "x": 1022,
+          "y": 431.5
+        },
+        {
+          "content": "Building effective agents (Anthropic)",
+          "x": 1022,
+          "y": 338.5
+        },
+        {
+          "content": "AI Engineering roles job board from Jason Liu",
+          "x": 1022,
+          "y": 245
+        },
+        {
+          "content": "Additional resources to read",
+          "x": 100,
+          "y": 554.5
+        }
+      ],
+      "links": [
+        {
+          "text": "https://leehanchung.github.io/blogs/2025/05/09/agent-is-workflow/",
+          "url": "https://leehanchung.github.io/blogs/2025/05/09/agent-is-workflow/",
+          "x": 1022,
+          "y": 698.700012
+        },
+        {
+          "text": "https://www.youtube.com/live/U-fMsbY-kHY?feature=shared&t=821",
+          "url": "https://www.youtube.com/live/U-fMsbY-kHY?feature=shared&t=821",
+          "x": 1022,
+          "y": 605.700012
+        },
+        {
+          "text": "https://www.youtube.com/live/L89GzWEILkM?t=11425s",
+          "url": "https://www.youtube.com/live/L89GzWEILkM?t=11425s",
+          "x": 1022,
+          "y": 512.700012
+        },
+        {
+          "text": "https://www.bloomberg.com/news/newsletters/2025-06-12/new-york-state-updates-warn-notices-to-identify-layoffs-tied-to-ai?srnd=homepage-americas&embedded-checkout=true",
+          "url": "https://www.bloomberg.com/news/newsletters/2025-06-12/new-york-state-updates-warn-notices-to-identify-layoffs-tied-to-ai?srnd=homepage-americas&embedded-checkout=true",
+          "x": 1022,
+          "y": 419.700012
+        },
+        {
+          "text": "https://www.anthropic.com/engineering/building-effective-agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents",
+          "x": 1022,
+          "y": 326.700012
+        },
+        {
+          "text": "https://jobs.applied-llms.org/",
+          "url": "https://jobs.applied-llms.org/",
+          "x": 1022,
+          "y": 233.199951
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "text": [
+        {
+          "content": "Get a head start and do",
+          "x": 100,
+          "y": 557
+        },
+        {
+          "content": "these things now!",
+          "x": 100,
+          "y": 474
+        },
+        {
+          "content": "Cursor (AI onboarding buddy!\u001f",
+          "x": 1123,
+          "y": 650
+        },
+        {
+          "content": "\u0019^ Tell Cursor Agent that you want to",
+          "x": 1072.373187,
+          "y": 557
+        },
+        {
+          "content": "onboard for the bootcam'",
+          "x": 1123,
+          "y": 504
+        },
+        {
+          "content": "\u0016^ Build your first LLM call to a model",
+          "x": 1072.373187,
+          "y": 411
+        },
+        {
+          "content": "of choice!\n\n",
+          "x": 1123,
+          "y": 358
+        },
+        {
+          "content": "*In case the MCP server doesn’t work,",
+          "x": 1060,
+          "y": 252
+        },
+        {
+          "content": "here’s the manual setup guide",
+          "x": 1060,
+          "y": 199
+        }
+      ],
+      "links": [
+        {
+          "text": "https://www.cursor.com/",
+          "url": "https://www.cursor.com/",
+          "x": 1253.634766,
+          "y": 837.200012
+        },
+        {
+          "text": "https://hai-the-dude.notion.site/Setup-your-first-project-212836f4a1b38072acc0ccc9097c991e?pvs=74",
+          "url": "https://hai-the-dude.notion.site/Setup-your-first-project-212836f4a1b38072acc0ccc9097c991e?pvs=74",
+          "x": 1265.40625,
+          "y": 784.200012
+        },
+        {
+          "text": "https://agent-engineering-bootcamp-mcp.vercel.app/",
+          "url": "https://agent-engineering-bootcamp-mcp.vercel.app/",
+          "x": 1280.130859,
+          "y": 691.200012
+        },
+        {
+          "text": "https://hai-the-dude.notion.site/Setup-your-first-project-212836f4a1b38072acc0ccc9097c991e?pvs=74",
+          "url": "https://hai-the-dude.notion.site/Setup-your-first-project-212836f4a1b38072acc0ccc9097c991e?pvs=74",
+          "x": 1060,
+          "y": 187.199951
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "text": [
+        {
+          "content": "Q&A / demonstration",
+          "x": 448.291016,
+          "y": 499
+        }
+      ],
+      "links": []
+    }
+  ]
+}
